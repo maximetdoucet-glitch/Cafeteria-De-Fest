@@ -41,10 +41,10 @@ export default function Menu() {
     },
   ];
   return (
-    <section id="highlights" className="py-24 bg-brand-cream overflow-hidden">
+    <section id="highlights" className="py-16 md:py-24 bg-brand-cream overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4">
+          <h2 className="text-4xl md:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4">
             {t('menu.title')}
           </h2>
           <p className="text-gray-400 font-bold uppercase tracking-widest text-xs max-w-md mx-auto">
@@ -74,7 +74,7 @@ export default function Menu() {
               </div>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-2xl font-black text-brand-charcoal leading-none group-hover:text-brand-red transition-colors">
                     {item.name}
@@ -102,7 +102,7 @@ export default function Menu() {
           </p>
           <button
             onClick={openOrder}
-            className="inline-flex items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+            className="w-full md:w-auto inline-flex justify-center items-center gap-3 px-6 py-4 md:px-16 md:py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
           >
             {t('hero.cta.order')}
             <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />

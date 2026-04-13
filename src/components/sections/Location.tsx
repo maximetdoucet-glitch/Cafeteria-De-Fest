@@ -7,10 +7,10 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Location() {
   const { t } = useLanguage();
   return (
-    <section id="location" className="py-24 bg-white text-brand-charcoal relative overflow-hidden">
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="location" className="py-16 md:py-24 bg-white text-brand-charcoal relative overflow-hidden">
+      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
         <div>
-          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 italic text-shadow-food">
+          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 md:mb-8 italic text-shadow-food">
             {t('location.title').split(' ').map((word, i) => (
               i === t('location.title').split(' ').length - 1 ? <span key={i} className="text-brand-red decoration-brand-charcoal underline underline-offset-8">{word}</span> : word + ' '
             ))}
@@ -19,7 +19,7 @@ export default function Location() {
             {t('location.subtitle')}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12">
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-brand-red">
                 <MapPin className="w-5 h-5" />
@@ -67,7 +67,7 @@ export default function Location() {
             </a>
           </div>
           
-          <div className="mt-16">
+          <div className="mt-8 md:mt-16">
              <a 
                href="https://www.google.com/maps/dir/?api=1&destination=Kanunnik+Boenenstraat+2-4+Nijmegen"
                target="_blank"
@@ -80,7 +80,7 @@ export default function Location() {
         </div>
 
         {/* Map Placeholder */}
-        <div className="relative aspect-square md:aspect-video rounded-none overflow-hidden bg-brand-charcoal shadow-[30px_30px_0px_0px_rgba(229,62,62,1)]">
+        <div className="relative aspect-square md:aspect-video rounded-none overflow-hidden bg-brand-charcoal shadow-[15px_15px_0px_0px_rgba(229,62,62,1)] md:shadow-[30px_30px_0px_0px_rgba(229,62,62,1)]">
            <iframe
               title={t('location.maps.title')}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2462.483935667351!2d5.867962477382436!3d51.815591388147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c709ab82302633%3A0xedb3a62867808381!2sCafetaria%20De%20Fest!5e0!3m2!1snl!2snl!4v1712921000000!5m2!1snl!2snl"

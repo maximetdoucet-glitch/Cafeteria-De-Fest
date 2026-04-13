@@ -26,7 +26,7 @@ export default function PickupProcess() {
     },
   ];
   return (
-    <section className="py-24 bg-brand-charcoal text-white">
+    <section className="py-16 md:py-24 bg-brand-charcoal text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-6xl font-black mb-16 uppercase tracking-tighter italic">
           {t('pickup.title')}
@@ -49,10 +49,10 @@ export default function PickupProcess() {
           ))}
         </div>
 
-        <div className="mt-20">
+        <div className="mt-12 md:mt-20">
            <button
             onClick={openOrder}
-            className="inline-flex items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+            className="w-full md:w-auto flex justify-center items-center gap-3 px-6 py-4 md:px-16 md:py-6 border-4 border-white text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red hover:border-brand-red transition-all shadow-2xl group cursor-pointer"
           >
             {t('hero.cta.order')}
             <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />

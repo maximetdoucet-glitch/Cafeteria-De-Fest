@@ -29,11 +29,11 @@ export default function Testimonials() {
     }
   ];
   return (
-    <section className="py-24 bg-[#FAFAFA] overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between lg:items-end mb-16 gap-8 text-center lg:text-left">
           <div className="max-w-4xl">
-             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4 whitespace-nowrap">
+             <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4 md:whitespace-nowrap">
                 {t('testimonials.title').split(' ').map((word, i) => (
                   i === t('testimonials.title').split(' ').length - 1 ? <span key={i} className="text-brand-red">{word}</span> : word + ' '
                 ))}

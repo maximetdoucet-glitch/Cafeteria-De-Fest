@@ -98,7 +98,7 @@ export default function OrderPage() {
 
           {/* Main Content Area */}
           <div className="flex-1 h-full flex flex-col bg-white relative bg-white">
-            <div className="flex-1 overflow-y-auto p-8 md:p-12 pb-32">
+            <div className="flex-1 overflow-y-auto p-5 md:p-12 pb-32">
               <AnimatePresence mode="wait">
                 {step === 'identity' && (
                   <motion.div 
@@ -109,7 +109,7 @@ export default function OrderPage() {
                     className="max-w-md"
                   >
                     <span className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">Step 01</span>
-                    <h3 className="text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-8">{t('order.step.identity')}</h3>
+                    <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-8">{t('order.step.identity')}</h3>
                     
                     <div className="space-y-6">
                       <div>
@@ -155,7 +155,7 @@ export default function OrderPage() {
                     <span className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">
                       {step === 'drinks' ? 'Step 02' : step === 'food' ? 'Step 03' : 'Step 04'}
                     </span>
-                    <h3 className="text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t(`order.step.${step}`)}</h3>
+                    <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t(`order.step.${step}`)}</h3>
                     <p className="text-xs font-bold text-brand-charcoal/40 uppercase tracking-widest mb-10">Selecteer de items die je wilt toevoegen.</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -251,7 +251,7 @@ export default function OrderPage() {
                        <div className="border-t-2 border-brand-charcoal pt-6 flex justify-between items-end">
                           <div>
                              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-charcoal/40 block">TOTAAL BEDRAG</span>
-                             <span className="text-4xl font-black text-brand-red italic">€{totalPrice.toFixed(2)}</span>
+                             <span className="text-3xl md:text-4xl font-black text-brand-red italic">€{totalPrice.toFixed(2)}</span>
                           </div>
                           <div className="text-right">
                              <div className="flex items-center space-x-1 mb-1 justify-end">
@@ -284,7 +284,7 @@ export default function OrderPage() {
                       <div className="absolute -inset-4 border-4 border-green-500/20 rounded-full animate-ping"></div>
                     </div>
                     
-                    <h3 className="text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t('order.success.title')}</h3>
+                    <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t('order.success.title')}</h3>
                     <p className="text-brand-charcoal/60 font-medium max-w-sm mx-auto mb-12 leading-relaxed">
                       {t('order.success.desc')}
                     </p>
@@ -327,7 +327,7 @@ export default function OrderPage() {
             </div>
 
             {/* Bottom Nav */}
-            <div className={`shrink-0 p-6 md:p-8 border-t border-brand-charcoal/5 bg-white z-40 transition-transform ${step === 'success' ? 'hidden' : ''}`}>
+            <div className={`shrink-0 p-4 md:p-8 border-t border-brand-charcoal/5 bg-white z-40 transition-transform ${step === 'success' ? 'hidden' : ''}`}>
               <div className="flex justify-between items-center max-w-5xl mx-auto">
                 <div className="flex items-center space-x-4">
                   {currentStepIndex > 0 && step !== 'success' && (
@@ -335,9 +335,9 @@ export default function OrderPage() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={handleBack}
-                      className="p-4 border-2 border-brand-charcoal/10 rounded-full text-brand-charcoal hover:bg-brand-charcoal hover:text-white transition-all shadow-sm"
+                      className="p-3 md:p-4 border-2 border-brand-charcoal/10 rounded-full text-brand-charcoal hover:bg-brand-charcoal hover:text-white transition-all shadow-sm"
                     >
-                      <ChevronLeft size={24} />
+                      <ChevronLeft size={20} className="md:w-6 md:h-6" />
                     </motion.button>
                   )}
                   <div className="hidden sm:block">
@@ -357,7 +357,7 @@ export default function OrderPage() {
                       whileTap={{ scale: 0.95 }}
                       onClick={step === 'summary' ? submitOrder : handleNext}
                       disabled={step === 'identity' && !userName || step === 'summary' && selectedItems.length === 0}
-                      className={`text-white px-10 py-4 font-black uppercase tracking-widest text-xs flex items-center space-x-3 transition-all shadow-xl disabled:opacity-20 disabled:grayscale ${
+                      className={`text-white px-6 py-3 md:px-10 md:py-4 font-black uppercase tracking-widest text-[10px] md:text-xs flex items-center space-x-2 md:space-x-3 transition-all shadow-xl disabled:opacity-20 disabled:grayscale ${
                         step === 'summary' ? "bg-brand-red hover:bg-brand-charcoal" : "bg-brand-charcoal hover:bg-brand-red"
                       }`}
                     >

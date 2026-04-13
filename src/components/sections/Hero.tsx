@@ -33,7 +33,7 @@ export default function Hero() {
             {t('hero.since')}
           </span>
           
-          <h1 className="font-heading font-black text-6xl md:text-8xl lg:text-9xl leading-[0.85] mb-6 text-brand-charcoal uppercase tracking-tighter">
+          <h1 className="font-heading font-black text-5xl md:text-8xl lg:text-9xl leading-[0.85] mb-6 text-brand-charcoal uppercase tracking-tighter">
             Cafetaria<br />
             <span className="text-brand-red">De Fest</span>
           </h1>
@@ -48,14 +48,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={openOrder}
-              className="px-12 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-brand-charcoal transition-all shadow-2xl group cursor-pointer"
+              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-brand-charcoal transition-all shadow-2xl group cursor-pointer"
             >
               {t('hero.cta.order')}
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <a 
               href="#menu"
-              className="px-12 py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all text-center"
+              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all flex items-center justify-center"
             >
               {t('hero.cta.menu')}
             </a>

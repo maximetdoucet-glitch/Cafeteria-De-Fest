@@ -42,8 +42,8 @@ export default function Navbar() {
               className="object-contain"
             />
           </div>
-          <div className="hidden sm:flex flex-col">
-            <span className="font-heading font-black text-2xl leading-none uppercase tracking-tighter text-brand-charcoal">
+          <div className="flex flex-col">
+            <span className="font-heading font-black text-[16px] sm:text-2xl leading-none uppercase tracking-tighter text-brand-charcoal">
               Cafetaria <span className="text-brand-red">De Fest</span>
             </span>
             <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${
