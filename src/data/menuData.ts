@@ -1,111 +1,121 @@
 export interface MenuItem {
-  name: string;
+  nameKey: string;
   price: string;
-  description?: string;
+  descriptionKey?: string;
   popular?: boolean;
   vegetarian?: boolean;
 }
 
 export interface MenuCategory {
   id: string;
-  name: string;
+  nameKey: string;
   items: MenuItem[];
 }
 
 export const menuData: MenuCategory[] = [
   {
     id: "friet",
-    name: "Friet",
+    nameKey: "cat.friet",
     items: [
-      { name: "Friet Klein", price: "€3,00" },
-      { name: "Friet Middel", price: "€4,00" },
-      { name: "Friet Groot", price: "€5,00" },
-      { name: "Friet Speciaal", price: "€5,50", description: "Mayo, curry, ui", popular: true },
-      { name: "Patatje Oorlog", price: "€5,50", description: "Mayo, satésaus, ui" },
-      { name: "Patatje Joppie", price: "€5,00", description: "Met Joppiesaus" },
-      { name: "Friet met Stoofvlees", price: "€8,50", description: "Ambachtelijk gestoofd rundvlees", popular: true },
-      { name: "Friet Ketchup", price: "€4,50" },
-      { name: "Loaded Fries", price: "€9,00", description: "Kaas, bacon, jalapeño, saus" },
+      { nameKey: "menu.friet.klein", price: "€3,00" },
+      { nameKey: "menu.friet.middel", price: "€4,00" },
+      { nameKey: "menu.friet.groot", price: "€5,00" },
+      { nameKey: "menu.friet.speciaal", price: "€5,50", descriptionKey: "menu.desc.speciaal", popular: true },
+      { nameKey: "menu.friet.oorlog", price: "€5,50", descriptionKey: "menu.desc.oorlog" },
+      { nameKey: "menu.friet.joppie", price: "€5,00", descriptionKey: "menu.desc.joppie" },
+      { nameKey: "menu.friet.stoofvlees", price: "€8,50", descriptionKey: "menu.desc.stoofvlees", popular: true },
+      { nameKey: "menu.friet.ketchup", price: "€4,50" },
+      { nameKey: "menu.friet.loaded", price: "€9,00", descriptionKey: "menu.desc.loaded" },
     ],
   },
   {
     id: "snacks",
-    name: "Snacks",
+    nameKey: "cat.snacks",
     items: [
-      { name: "Frikandel", price: "€2,50" },
-      { name: "Kroket", price: "€2,50", popular: true },
-      { name: "Kaassouflé", price: "€2,50", vegetarian: true },
-      { name: "Bami Schijf", price: "€2,50" },
-      { name: "Nasi Schijf", price: "€2,50" },
-      { name: "Mexicano", price: "€2,75" },
-      { name: "Kipcorn", price: "€2,75" },
-      { name: "Loempia", price: "€3,00" },
-      { name: "Frikandel Speciaal", price: "€3,50", description: "Mayo, curry, ui" },
-      { name: "Gehaktbal", price: "€3,00" },
-      { name: "Viandel", price: "€2,75" },
-      { name: "Berenhap", price: "€3,50" },
+      { nameKey: "menu.snack.frikandel", price: "€2,50" },
+      { nameKey: "menu.snack.kroket", price: "€2,50", popular: true },
+      { nameKey: "menu.snack.kaassoufle", price: "€2,50", vegetarian: true },
+      { nameKey: "menu.snack.bamischijf", price: "€2,50" },
+      { nameKey: "menu.snack.nasischijf", price: "€2,50" },
+      { nameKey: "menu.snack.mexicano", price: "€2,75" },
+      { nameKey: "menu.snack.kipcorn", price: "€2,75" },
+      { nameKey: "menu.snack.loempia", price: "€3,00" },
+      { nameKey: "menu.snack.frikandelspeciaal", price: "€3,50", descriptionKey: "menu.desc.speciaal" }, // Reusing speciaal for frikandel speciaal
+      { nameKey: "menu.snack.gehaktbal", price: "€3,00" },
+      { nameKey: "menu.snack.viandel", price: "€2,75" },
+      { nameKey: "menu.snack.berenhap", price: "€3,50" },
     ],
   },
   {
     id: "kapsalon",
-    name: "Kapsalon",
+    nameKey: "cat.kapsalon",
     items: [
-      { name: "Kapsalon Shoarma", price: "€10,50", description: "Friet, shoarma, kaas, salade, saus", popular: true },
-      { name: "Kapsalon Kip", price: "€10,50", description: "Friet, kip, kaas, salade, saus" },
-      { name: "Kapsalon Döner", price: "€11,00", description: "Friet, döner, kaas, salade, saus" },
-      { name: "Calzone Kapsalon", price: "€12,50", description: "Speciale De Fest variant!", popular: true },
-      { name: "Kapsalon Falafel", price: "€10,50", description: "Friet, falafel, kaas, salade, saus", vegetarian: true },
+      { nameKey: "menu.kapsalon.shoarma", price: "€10,50", descriptionKey: "menu.desc.kapsalon.std", popular: true },
+      { nameKey: "menu.kapsalon.kip", price: "€10,50", descriptionKey: "menu.desc.kapsalon.std" },
+      { nameKey: "menu.kapsalon.doner", price: "€11,00", descriptionKey: "menu.desc.kapsalon.std" },
+      { nameKey: "menu.kapsalon.calzone", price: "€12,50", descriptionKey: "menu.desc.calzone", popular: true },
+      { nameKey: "menu.kapsalon.falafel", price: "€10,50", descriptionKey: "menu.desc.kapsalon.std", vegetarian: true },
     ],
   },
   {
     id: "pizza",
-    name: "Pizza's",
+    nameKey: "cat.pizza",
     items: [
-      { name: "Margherita", price: "€8,50", description: "Tomaat, mozzarella, basilicum", vegetarian: true },
-      { name: "Hawaii", price: "€10,00", description: "Ham, ananas, kaas" },
-      { name: "Pepperoni", price: "€10,50", description: "Pikante pepperoni, mozzarella" },
-      { name: "Shoarma Pizza", price: "€11,00", description: "Shoarma, ui, paprika, knoflooksaus", popular: true },
-      { name: "Pizza Tonno", price: "€10,50", description: "Tonijn, ui, olijven" },
-      { name: "Pizza Quattro Formaggi", price: "€11,00", description: "Vier kazen", vegetarian: true },
-      { name: "Calzone", price: "€11,50", description: "Gevulde pizza met ham & kaas" },
-      { name: "Pizza De Fest Special", price: "€12,50", description: "Alles erop en eraan!", popular: true },
+      { nameKey: "menu.pizza.margherita", price: "€8,50", descriptionKey: "menu.pizza.margherita.desc", vegetarian: true },
+      { nameKey: "menu.pizza.hawaii", price: "€10,00", descriptionKey: "menu.pizza.hawaii.desc" },
+      { nameKey: "menu.pizza.pepperoni", price: "€10,50", descriptionKey: "menu.pizza.pepperoni.desc" },
+      { nameKey: "menu.pizza.shoarma", price: "€11,00", descriptionKey: "menu.pizza.shoarma.desc", popular: true },
+      { nameKey: "menu.pizza.tonno", price: "€10,50", descriptionKey: "menu.pizza.tonno.desc" },
+      { nameKey: "menu.pizza.quattro", price: "€11,00", descriptionKey: "menu.pizza.quattro.desc", vegetarian: true },
+      { nameKey: "menu.pizza.calzone", price: "€11,50", descriptionKey: "menu.pizza.calzone.desc" },
+      { nameKey: "menu.pizza.special", price: "€12,50", descriptionKey: "menu.pizza.special.desc", popular: true },
     ],
   },
   {
     id: "burgers",
-    name: "Burgers",
+    nameKey: "cat.burgers",
     items: [
-      { name: "Hamburger", price: "€5,50" },
-      { name: "Cheeseburger", price: "€6,50" },
-      { name: "Kipburger", price: "€6,50" },
-      { name: "De Fest Burger", price: "€9,50", description: "Dubbel vlees, bacon, cheddar, saus", popular: true },
-      { name: "Broodje Shoarma", price: "€7,00" },
-      { name: "Broodje Döner", price: "€7,50" },
-      { name: "Broodje Falafel", price: "€6,50", vegetarian: true },
+      { nameKey: "menu.burger.hamburger", price: "€5,50" },
+      { nameKey: "menu.burger.cheeseburger", price: "€6,50" },
+      { nameKey: "menu.burger.kipburger", price: "€6,50" },
+      { nameKey: "menu.burger.defest", price: "€9,50", descriptionKey: "menu.burger.defest.desc", popular: true },
+      { nameKey: "menu.burger.shoarma", price: "€7,00" },
+      { nameKey: "menu.burger.doner", price: "€7,50" },
+      { nameKey: "menu.burger.falafel", price: "€6,50", vegetarian: true },
     ],
   },
   {
     id: "schotels",
-    name: "Schotels",
+    nameKey: "cat.schotels",
     items: [
-      { name: "Shoarma Schotel", price: "€12,00", description: "Met friet, salade en saus" },
-      { name: "Kip Schotel", price: "€12,00", description: "Met friet, salade en saus" },
-      { name: "Döner Schotel", price: "€12,50", description: "Met friet, salade en saus" },
-      { name: "Mix Schotel", price: "€13,50", description: "Shoarma, kip, döner", popular: true },
+      { nameKey: "menu.schotel.shoarma", price: "€12,00", descriptionKey: "menu.schotel.shoarma.desc" },
+      { nameKey: "menu.schotel.kip", price: "€12,00", descriptionKey: "menu.schotel.kip.desc" },
+      { nameKey: "menu.schotel.doner", price: "€12,50", descriptionKey: "menu.schotel.doner.desc" },
+      { nameKey: "menu.schotel.mix", price: "€13,50", descriptionKey: "menu.schotel.mix.desc", popular: true },
     ],
   },
   {
     id: "dranken",
-    name: "Dranken",
+    nameKey: "cat.dranken",
     items: [
-      { name: "Coca-Cola", price: "€2,00" },
-      { name: "Fanta", price: "€2,00" },
-      { name: "Sprite", price: "€2,00" },
-      { name: "Ice Tea", price: "€2,00" },
-      { name: "Water", price: "€1,50" },
-      { name: "Chocomel", price: "€2,50" },
-      { name: "Milkshake", price: "€4,00", description: "Vanille, aardbei of chocolade" },
-      { name: "Ayran", price: "€2,00" },
+      { nameKey: "menu.drink.cola", price: "€2,00" },
+      { nameKey: "menu.drink.fanta", price: "€2,00" },
+      { nameKey: "menu.drink.sprite", price: "€2,00" },
+      { nameKey: "menu.drink.icetea", price: "€2,00" },
+      { nameKey: "menu.drink.water", price: "€1,50" },
+      { nameKey: "menu.drink.chocomel", price: "€2,50" },
+      { nameKey: "menu.drink.milkshake", price: "€4,00", descriptionKey: "menu.desc.milkshake" },
+      { nameKey: "menu.drink.ayran", price: "€2,00" },
+    ],
+  },
+  {
+    id: "desserts",
+    nameKey: "cat.desserts",
+    items: [
+      { nameKey: "menu.dessert.softijst", price: "€2,50", popular: true },
+      { nameKey: "menu.dessert.sorbet", price: "€4,50", descriptionKey: "menu.desc.sorbet" },
+      { nameKey: "menu.dessert.vlaflip", price: "€3,50" },
+      { nameKey: "menu.dessert.ijshoorn", price: "€1,50" },
     ],
   },
 ];

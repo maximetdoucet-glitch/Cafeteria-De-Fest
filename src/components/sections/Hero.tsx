@@ -3,8 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useOrder } from "@/context/OrderContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+  const { openOrder } = useOrder();
   return (
     <section className="relative h-screen w-full flex items-center overflow-hidden bg-white">
       {/* Photo on the right, fading into white on the left */}
@@ -26,7 +30,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl">
           <span className="inline-block text-brand-red font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-6">
-            Snackbar & Lunchroom • Brakkenstein, Nijmegen
+            {t('hero.since')}
           </span>
           
           <h1 className="font-heading font-black text-6xl md:text-8xl lg:text-9xl leading-[0.85] mb-6 text-brand-charcoal uppercase tracking-tighter">
@@ -35,26 +39,25 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-brand-charcoal/70 font-medium max-w-lg mb-4 leading-relaxed">
-            Al jaren hét adres voor verse friet, ambachtelijke snacks en de lekkerste pizza's in Nijmegen.
+            {t('hero.subtitle')}
           </p>
           <p className="text-xs font-black uppercase tracking-widest text-brand-red mb-10">
-            Bestel online • Haal het op in de winkel
+            {t('pickup.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a 
-              href="https://www.thuisbezorgd.nl" 
-              target="_blank"
-              className="px-12 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-brand-charcoal transition-all shadow-2xl group"
+            <button 
+              onClick={openOrder}
+              className="px-12 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-brand-charcoal transition-all shadow-2xl group cursor-pointer"
             >
-              Plaats je bestelling
+              {t('hero.cta.order')}
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
             <a 
               href="#menu"
               className="px-12 py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all text-center"
             >
-              Bekijk Menu
+              {t('hero.cta.menu')}
             </a>
           </div>
         </div>

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import React, { ReactNode } from "react";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { OrderProvider } from "@/context/OrderContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,12 +23,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="nl" className="scroll-smooth">
       <body className={`${inter.variable} ${outfit.variable} font-body bg-black text-white antialiased`}>
-        {children}
+        <LanguageProvider>
+          <OrderProvider>
+            {children}
+          </OrderProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

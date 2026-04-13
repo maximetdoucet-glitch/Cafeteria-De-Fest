@@ -3,46 +3,50 @@
 import React from "react";
 import { Star, Quote, ChevronRight } from "lucide-react";
 import Link from "next/link";
-
-const testimonials = [
-  {
-    name: "Pieter Bas",
-    text: "Dit is echt de leukste snackbar van Nijmegen. Plus ze hebben ook de lekkerste kapsalon van Nijmegen! De sfeer is altijd top.",
-    stars: 5,
-    tag: "Geverifieerde Gast"
-  },
-  {
-    name: "Mees Thissen",
-    text: "Geweldige snackbar, vrolijke aardige medewerkers en je betaalt een goede prijs voor het overheerlijke eten. Een aanrader voor iedereen in Brakkenstein.",
-    stars: 5,
-    tag: "Lokale Gids"
-  },
-  {
-    name: "Pim",
-    text: "Zodra de vriendelijke eigenaar je begroet, voel je je meteen welkom. De 'schotels' zijn meesterlijk en altijd vers bereid.",
-    stars: 5,
-    tag: "Vaste Klant"
-  }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      name: "Pieter Bas",
+      text: t('testimonials.item1.text'),
+      stars: 5,
+      tag: t('testimonials.verified')
+    },
+    {
+      name: "Mees Thissen",
+      text: t('testimonials.item2.text'),
+      stars: 5,
+      tag: "Lokale Gids"
+    },
+    {
+      name: "Pim",
+      text: t('testimonials.item3.text'),
+      stars: 5,
+      tag: "Vaste Klant"
+    }
+  ];
   return (
     <section className="py-24 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between lg:items-end mb-16 gap-8 text-center lg:text-left">
           <div className="max-w-4xl">
              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4 whitespace-nowrap">
-                Wat onze <span className="text-brand-red">Gasten zeggen</span>
+                {t('testimonials.title').split(' ').map((word, i) => (
+                  i === t('testimonials.title').split(' ').length - 1 ? <span key={i} className="text-brand-red">{word}</span> : word + ' '
+                ))}
              </h2>
              <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">
-                De stem van Brakkenstein. Al jaren een begrip in de wijk.
+                {t('testimonials.subtitle')}
              </p>
           </div>
           <Link 
             href="/reviews"
             className="flex items-center gap-2 text-brand-charcoal font-black uppercase tracking-widest text-[10px] border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
           >
-            Bekijk alle Recensies
+            {t('reviews.cta.button')}
             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

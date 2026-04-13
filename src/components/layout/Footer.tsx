@@ -1,50 +1,64 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useOrder } from "@/context/OrderContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  const { openOrder } = useOrder();
   return (
     <footer className="bg-brand-charcoal py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-12">
-          {/* Logo & Tagline */}
+           {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start">
              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-brand-red rounded-full flex items-center justify-center">
-                   <span className="text-white font-heading font-black text-xl italic">F</span>
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+                   <Image 
+                     src="/images/logo-mark.png" 
+                     alt="De Fest Logo" 
+                     fill
+                     className="object-contain"
+                   />
                 </div>
                 <span className="text-2xl font-black tracking-tighter uppercase text-white">
                   De <span className="text-brand-red">Fest</span>
                 </span>
              </div>
              <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Brakkenstein • Nijmegen</p>
-             <p className="text-white/30 text-xs leading-relaxed max-w-xs text-center md:text-left">
-               Al meer dan 10 jaar de huiskamer van Brakkenstein. Vers bereid, altijd welkom.
+             <p className="text-white/30 text-xs leading-relaxed max-w-xs text-center md:text-left mb-4">
+               {t('footer.tagline')}
              </p>
+             <Link href="/orders" className="text-[8px] font-black uppercase tracking-[0.4em] text-white/10 hover:text-brand-red transition-colors inline-block">
+               Kitchen Access
+             </Link>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start">
-             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">Navigatie</h4>
+             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">{t('nav.about')}</h4>
              <div className="flex flex-col gap-3">
                 {[
-                  { name: "Menukaart", href: "/menu" },
-                  { name: "Over ons", href: "/about" },
-                  { name: "Recensies", href: "/reviews" },
-                  { name: "Bestel Online", href: "https://www.thuisbezorgd.nl" }
+                  { name: t('nav.menu'), href: "/menu" },
+                  { name: t('nav.about'), href: "/about" },
+                  { name: t('nav.reviews'), href: "/reviews" }
                 ].map(item => (
                    <Link key={item.name} href={item.href} className="font-bold text-xs text-white/40 hover:text-brand-red transition-colors">
                       {item.name}
                    </Link>
                 ))}
+                <button onClick={openOrder} className="font-bold text-xs text-left text-white/40 hover:text-brand-red transition-colors cursor-pointer">
+                   {t('nav.order')}
+                </button>
              </div>
           </div>
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start">
-             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">Contact</h4>
+             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">{t('location.contact.title')}</h4>
              <div className="flex flex-col gap-4">
                 <a href="tel:024-3563132" className="flex items-center gap-3 text-white/40 hover:text-brand-red transition-colors">
                    <Phone size={14} className="text-brand-red" />
@@ -57,8 +71,8 @@ export default function Footer() {
                 <div className="flex items-start gap-3 text-white/40">
                    <MapPin size={14} className="text-brand-red mt-0.5 flex-shrink-0" />
                    <span className="text-xs font-bold leading-relaxed">
-                     Kanunnik Boenenstraat 22-24<br/>
-                     6525 WK, Nijmegen
+                     Kanunnik Boenenstraat 2-4<br/>
+                     6525 WS, Nijmegen
                    </span>
                 </div>
              </div>
@@ -66,10 +80,11 @@ export default function Footer() {
 
           {/* Social & Hours */}
           <div className="flex flex-col items-center md:items-start">
-             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">Volg ons</h4>
+             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">{t('location.social.title')}</h4>
              <a 
                href="https://www.facebook.com/p/Cafetaria-De-Fest-100036648867206/" 
                target="_blank"
+               rel="noopener noreferrer"
                className="flex items-center gap-3 text-white/40 hover:text-brand-red transition-colors mb-6"
              >
                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-brand-red" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +93,7 @@ export default function Footer() {
                 <span className="text-xs font-bold">Facebook</span>
              </a>
              <div className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold space-y-1">
-                <p>Ma - Zo: 12:00 - 22:00</p>
+                <p>{t('location.hours.days')}</p>
              </div>
           </div>
         </div>
@@ -86,10 +101,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
            <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
-              © {new Date().getFullYear()} Cafetaria De Fest. Alle rechten voorbehouden.
+              {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
            </div>
            <div className="text-[8px] font-black uppercase tracking-[0.6em] text-white/10">
-              Vers • Heet • Snel
+              {t('footer.tagline')}
            </div>
         </div>
       </div>

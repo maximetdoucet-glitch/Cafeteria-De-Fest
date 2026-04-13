@@ -2,50 +2,53 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Flame, ChevronRight } from "lucide-react";
-
-const highlights = [
-  {
-    name: "Friet Speciaal",
-    description: "Versgesneden, dubbelgebakken. Met mayo, curry en ui.",
-    price: "v.a. €3,00",
-    image: "/images/friet-speciaal.png",
-    popular: true,
-  },
-  {
-    name: "Kapsalon Shoarma",
-    description: "Friet, shoarma, gesmolten kaas, salade en saus. Een klassieker!",
-    price: "v.a. €10,50",
-    image: "/images/kapsalon.png",
-    popular: true,
-  },
-  {
-    name: "De Fest Burger",
-    description: "Dubbel vlees, bacon, cheddar en huisgemaakte saus.",
-    price: "v.a. €9,50",
-    image: "/images/burger-real.png",
-    popular: true,
-  },
-  {
-    name: "Pizza De Fest",
-    description: "Vers deeg, belegd met champignons, paprika en pepperoni.",
-    price: "v.a. €8,50",
-    image: "/images/pizza-round.png",
-    popular: true,
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { useOrder } from "@/context/OrderContext";
 
 export default function Menu() {
+  const { t } = useLanguage();
+  const { openOrder } = useOrder();
+
+  const highlights = [
+    {
+      name: t('highlights.friet.title'),
+      description: t('highlights.friet.desc'),
+      price: "v.a. €3,00",
+      image: "/images/friet-speciaal.png",
+      popular: true,
+    },
+    {
+      name: t('highlights.kapsalon.title'),
+      description: t('highlights.kapsalon.desc'),
+      price: "v.a. €10,50",
+      image: "/images/kapsalon.png",
+      popular: true,
+    },
+    {
+      name: t('highlights.burger.title'),
+      description: t('highlights.burger.desc'),
+      price: "v.a. €9,50",
+      image: "/images/burger-real.png",
+      popular: true,
+    },
+    {
+      name: t('highlights.pizza.title'),
+      description: t('highlights.pizza.desc'),
+      price: "v.a. €8,50",
+      image: "/images/pizza-round.png",
+      popular: true,
+    },
+  ];
   return (
     <section id="highlights" className="py-24 bg-brand-cream overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-black text-brand-charcoal uppercase tracking-tighter leading-none mb-4">
-            Onze <span className="text-brand-red">Toppers</span>
+            {t('menu.title')}
           </h2>
           <p className="text-gray-400 font-bold uppercase tracking-widest text-xs max-w-md mx-auto">
-            De favorieten van Brakkenstein. Al jaren geliefd.
+            {t('menu.subtitle')}
           </p>
         </div>
 
@@ -55,7 +58,7 @@ export default function Menu() {
               {/* Popular Badge */}
               <div className="absolute top-4 right-4 z-20 flex items-center gap-1 bg-brand-red text-white font-black text-[10px] uppercase px-3 py-1.5 shadow-lg">
                 <Flame size={12} />
-                <span>Favoriet</span>
+                <span>{t('section.highlights.badge')}</span>
               </div>
 
               {/* Food Image */}
@@ -78,9 +81,15 @@ export default function Menu() {
                   </h3>
                   <span className="text-brand-red font-black italic text-lg">{item.price}</span>
                 </div>
-                <p className="text-gray-400 text-sm font-medium leading-relaxed">
+                <p className="text-gray-400 text-sm font-medium leading-relaxed mb-6">
                   {item.description}
                 </p>
+                <button 
+                  onClick={openOrder}
+                  className="w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
+                >
+                  {t('nav.order')}
+                </button>
               </div>
             </div>
           ))}
@@ -89,16 +98,15 @@ export default function Menu() {
         {/* CTA to full menu */}
         <div className="mt-16 text-center">
           <p className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-6">
-            Bestel online voor afhalen in de winkel
+            {t('section.order.info')}
           </p>
-          <Link
-            href="https://www.thuisbezorgd.nl"
-            target="_blank"
-            className="inline-flex items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group"
+          <button
+            onClick={openOrder}
+            className="inline-flex items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
           >
-            Plaats je bestelling
+            {t('hero.cta.order')}
             <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

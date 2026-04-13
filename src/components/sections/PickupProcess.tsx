@@ -1,32 +1,35 @@
 "use client";
 
-import React from "react";
-import { MousePointerClick, ShoppingBag, Utensils } from "lucide-react";
-
-const steps = [
-  {
-    icon: <MousePointerClick size={40} />,
-    title: "1. Kies uw eten",
-    description: "Blader door onze menukaart en kies uw favoriete gerechten.",
-  },
-  {
-    icon: <ShoppingBag size={40} />,
-    title: "2. Bestel Online",
-    description: "Bestel eenvoudig via Thuisbezorgd voor een snelle afhandeling.",
-  },
-  {
-    icon: <Utensils size={40} />,
-    title: "3. Afhalen & Genieten",
-    description: "Uw bestelling staat warm voor u klaar bij onze balie in Brakkenstein.",
-  },
-];
+import { MousePointerClick, ShoppingBag, Utensils, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useOrder } from "@/context/OrderContext";
 
 export default function PickupProcess() {
+  const { t } = useLanguage();
+  const { openOrder } = useOrder();
+
+  const steps = [
+    {
+      icon: <MousePointerClick size={40} />,
+      title: t('pickup.step1.title'),
+      description: t('pickup.step1.desc'),
+    },
+    {
+      icon: <ShoppingBag size={40} />,
+      title: t('pickup.step2.title'),
+      description: t('pickup.step2.desc'),
+    },
+    {
+      icon: <Utensils size={40} />,
+      title: t('pickup.step3.title'),
+      description: t('pickup.step3.desc'),
+    },
+  ];
   return (
     <section className="py-24 bg-brand-charcoal text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-6xl font-black mb-16 uppercase tracking-tighter italic">
-          HOE HET <span className="text-brand-red">WERKT</span>
+          {t('pickup.title')}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
@@ -47,13 +50,13 @@ export default function PickupProcess() {
         </div>
 
         <div className="mt-20">
-           <a 
-             href="https://www.thuisbezorgd.nl"
-             target="_blank"
-             className="px-16 py-6 bg-white text-brand-charcoal font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-red hover:text-white transition-all shadow-xl"
-           >
-             Begin nu met bestellen
-           </a>
+           <button
+            onClick={openOrder}
+            className="inline-flex items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+          >
+            {t('hero.cta.order')}
+            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>

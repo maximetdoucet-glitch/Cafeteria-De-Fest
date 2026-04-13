@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { menuData } from "@/data/menuData";
 import { Flame, Leaf, ShoppingCart } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useOrder } from "@/context/OrderContext";
 
 const categoryImages: Record<string, string> = {
   friet: "/images/friet-speciaal.png",
@@ -15,17 +17,9 @@ const categoryImages: Record<string, string> = {
   dranken: "/images/drinks.png",
 };
 
-const categoryDescriptions: Record<string, string> = {
-  friet: "Versgesneden aardappelen, dubbelgebakken tot gouden perfectie.",
-  snacks: "Klassieke Hollandse snacks, krokant en goudbruin uit de frituur.",
-  kapsalon: "De ultieme comfortfood-klassieker, gestapeld met smaak.",
-  pizza: "Vers deeg, rijkelijk belegd en gebakken in onze eigen oven.",
-  burgers: "Sappige burgers en broodjes, vers van de grill.",
-  schotels: "Royale schotels met friet, vlees, salade en huisgemaakte saus.",
-  dranken: "Verfrissende drankjes, milkshakes en meer.",
-};
-
 export default function FullMenu() {
+  const { t } = useLanguage();
+  const { openOrder } = useOrder();
   const [activeCategory, setActiveCategory] = useState(menuData[0].id);
 
   return (
@@ -47,7 +41,7 @@ export default function FullMenu() {
                     : "text-gray-400 hover:text-brand-charcoal hover:bg-gray-50"
                 }`}
               >
-                {cat.name}
+                {t(cat.nameKey)}
               </button>
             ))}
           </div>
@@ -63,7 +57,7 @@ export default function FullMenu() {
                 <div className="relative w-full md:w-2/5 aspect-[16/10] md:aspect-auto min-h-[200px]">
                   <Image
                     src={categoryImages[category.id] || "/images/friet-speciaal.png"}
-                    alt={category.name}
+                    alt={t(category.nameKey)}
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover"
@@ -72,13 +66,13 @@ export default function FullMenu() {
                 {/* Info Side */}
                 <div className="w-full md:w-3/5 flex flex-col justify-center p-8 md:p-12">
                   <span className="text-brand-red font-black uppercase tracking-[0.3em] text-[9px] mb-3">
-                    {category.items.length} gerechten
+                    {category.items.length} {t('menu.popular').toLowerCase()}
                   </span>
                   <h3 className="font-heading text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-4">
-                    {category.name}
+                    {t(category.nameKey)}
                   </h3>
                   <p className="text-white/50 text-sm font-medium leading-relaxed max-w-md">
-                    {categoryDescriptions[category.id]}
+                    {t(`cat.${category.id}.desc`)}
                   </p>
                 </div>
               </div>
@@ -87,30 +81,30 @@ export default function FullMenu() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-1 px-2 md:px-6">
                 {category.items.map((item) => (
                   <div
-                    key={item.name}
+                    key={item.nameKey}
                     className="group flex items-center justify-between py-5 border-b border-gray-100 hover:border-brand-red/30 transition-all"
                   >
                     <div className="flex-1 pr-4">
                       <div className="flex items-center gap-2.5 mb-1">
                         <span className="font-black text-brand-charcoal text-base group-hover:text-brand-red transition-colors">
-                          {item.name}
+                          {t(item.nameKey)}
                         </span>
                         {item.popular && (
                           <span className="flex items-center gap-0.5 bg-brand-red/10 text-brand-red text-[8px] font-black uppercase px-2 py-0.5 tracking-tight rounded-sm">
                             <Flame size={9} />
-                            Hit
+                            {t('menu.popular')}
                           </span>
                         )}
                         {item.vegetarian && (
                           <span className="flex items-center gap-0.5 bg-green-50 text-green-600 text-[8px] font-black uppercase px-2 py-0.5 tracking-tight rounded-sm">
                             <Leaf size={9} />
-                            Vega
+                            {t('menu.vegetarian')}
                           </span>
                         )}
                       </div>
-                      {item.description && (
+                      {item.descriptionKey && (
                         <p className="text-gray-400 text-xs font-medium">
-                          {item.description}
+                          {t(item.descriptionKey)}
                         </p>
                       )}
                     </div>
@@ -134,21 +128,22 @@ export default function FullMenu() {
             <div className="absolute inset-0 bg-brand-red opacity-5 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4" />
             <div className="relative z-10">
               <p className="text-white font-black uppercase tracking-widest text-xs mb-2">
-                Bestel online • Haal het op in de winkel
+                {t('section.order.info')}
               </p>
               <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-8">
-                Plaats je <span className="text-brand-red">bestelling</span>
+                {t('about.cta.title').split(' ').map((word, i) => (
+                  word.toLowerCase() === 'ervaar' || word.toLowerCase() === 'experience' || word.toLowerCase() === 'erleben' ? <span key={i} className="text-brand-red">{word}</span> : word + ' '
+                ))}
               </h3>
-              <a
-                href="https://www.thuisbezorgd.nl"
-                target="_blank"
-                className="inline-flex items-center gap-3 px-16 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-sm hover:bg-white hover:text-brand-charcoal transition-all shadow-2xl"
+              <button
+                onClick={openOrder}
+                className="inline-flex items-center gap-3 px-16 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-sm hover:bg-white hover:text-brand-charcoal transition-all shadow-2xl cursor-pointer"
               >
                 <ShoppingCart size={20} />
-                Plaats je bestelling
-              </a>
+                {t('hero.cta.order')}
+              </button>
               <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mt-6">
-                Direct afhalen bij Cafetaria De Fest
+                {t('location.address.title')} Cafetaria De Fest
               </p>
             </div>
           </div>
