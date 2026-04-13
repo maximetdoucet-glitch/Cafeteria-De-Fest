@@ -83,7 +83,7 @@ export default function Location() {
         <div className="relative aspect-square md:aspect-video rounded-none overflow-hidden bg-brand-charcoal shadow-[15px_15px_0px_0px_rgba(229,62,62,1)] md:shadow-[30px_30px_0px_0px_rgba(229,62,62,1)]">
            <iframe
               title={t('location.maps.title')}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2462.483935667351!2d5.867962477382436!3d51.815591388147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c709ab82302633%3A0xedb3a62867808381!2sCafetaria%20De%20Fest!5e0!3m2!1snl!2snl!4v1712921000000!5m2!1snl!2snl"
+              src="https://maps.google.com/maps?q=Cafetaria%20De%20Fest,%20Kanunnik%20Boenenstraat%202-4,%20Nijmegen&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               className="border-0"
