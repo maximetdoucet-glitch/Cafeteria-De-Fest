@@ -86,7 +86,7 @@ export default function Location() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2462.483935667351!2d5.867962477382436!3d51.815591388147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c709ab82302633%3A0xedb3a62867808381!2sCafetaria%20De%20Fest!5e0!3m2!1snl!2snl!4v1712921000000!5m2!1snl!2snl"
               width="100%"
               height="100%"
-              className="map-filter"
+              className="border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
