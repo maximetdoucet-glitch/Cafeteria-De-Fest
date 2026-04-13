@@ -50,7 +50,7 @@ export const translations = {
     'location.subtitle': 'In het hart van Brakkenstein • Nijmegen',
     'location.address.title': 'Adres',
     'location.hours.title': 'Afhalen',
-    'location.hours.days': 'Ma t/m Zo: 12:00 — 23:00',
+    'location.hours.days': 'Ma t/m Zo: 12:00 — 21:00',
     'location.contact.title': 'Contact',
     'location.social.title': 'Volg ons',
     'location.route': 'Routebeschrijving',
@@ -58,7 +58,7 @@ export const translations = {
 
     // Footer
     'footer.since': 'Sinds 2012',
-    'footer.hours': 'Ma - Zo: 12:00 - 22:00',
+    'footer.hours': 'Ma - Zo: 12:00 - 21:00',
     'footer.copyright': '© {year} Cafetaria De Fest. Alle rechten voorbehouden.',
     'footer.tagline': 'Vers • Heet • Snel',
 
@@ -282,7 +282,7 @@ export const translations = {
     'location.subtitle': 'In the heart of Brakkenstein • Nijmegen',
     'location.address.title': 'Address',
     'location.hours.title': 'Pickup',
-    'location.hours.days': 'Mon to Sun: 12:00 — 23:00',
+    'location.hours.days': 'Mon to Sun: 12:00 — 21:00',
     'location.contact.title': 'Contact',
     'location.social.title': 'Follow us',
     'location.route': 'Directions',
@@ -290,7 +290,7 @@ export const translations = {
 
     // Footer
     'footer.since': 'Since 2012',
-    'footer.hours': 'Mon - Sun: 12:00 - 22:00',
+    'footer.hours': 'Mon - Sun: 12:00 - 21:00',
     'footer.copyright': '© {year} Cafetaria De Fest. All rights reserved.',
     'footer.tagline': 'Fresh • Hot • Fast',
 
@@ -514,7 +514,7 @@ export const translations = {
     'location.subtitle': 'Im Herzen von Brakkenstein • Nimwegen',
     'location.address.title': 'Adresse',
     'location.hours.title': 'Abholung',
-    'location.hours.days': 'Mo bis So: 12:00 — 23:00',
+    'location.hours.days': 'Mo bis So: 12:00 — 21:00',
     'location.contact.title': 'Kontakt',
     'location.social.title': 'Folgen Sie uns',
     'location.route': 'Wegbeschreibung',
@@ -522,7 +522,7 @@ export const translations = {
 
     // Footer
     'footer.since': 'Seit 2012',
-    'footer.hours': 'Mo - So: 12:00 - 22:00',
+    'footer.hours': 'Mo - So: 12:00 - 21:00',
     'footer.copyright': '© {year} Cafetaria De Fest. Alle Rechte vorbehalten.',
     'footer.tagline': 'Frisch • Heiß • Schnell',
 
