@@ -109,7 +109,7 @@ export default function Menu() {
           </p>
           <button
             onClick={openOrder}
-            className="md:hidden w-full inline-flex justify-center items-center gap-3 px-6 py-4 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl cursor-pointer"
+            className="flex md:hidden w-full justify-center items-center gap-3 px-6 py-4 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl cursor-pointer"
           >
             {t('hero.cta.order')}
             <ChevronRight size={18} />
