@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
-import { Utensils, Users, History, Heart, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { Utensils, Users, History, Heart, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutContent() {
