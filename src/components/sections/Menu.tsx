@@ -109,11 +109,18 @@ export default function Menu() {
           </p>
           <button
             onClick={openOrder}
-            className="w-full md:w-auto inline-flex justify-center items-center gap-3 px-6 py-4 md:px-16 md:py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+            className="md:hidden w-full inline-flex justify-center items-center gap-3 px-6 py-4 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl cursor-pointer"
           >
             {t('hero.cta.order')}
-            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ChevronRight size={18} />
           </button>
+          <Link
+            href="/menu"
+            className="hidden md:inline-flex justify-center items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+          >
+            {t('menu.cta.full')}
+            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>
