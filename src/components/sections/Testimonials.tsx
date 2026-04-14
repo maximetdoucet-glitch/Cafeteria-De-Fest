@@ -42,13 +42,15 @@ export default function Testimonials() {
                 {t('testimonials.subtitle')}
              </p>
           </div>
-          <Link 
-            href="/reviews"
+          <a 
+            href="https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-brand-charcoal font-black uppercase tracking-widest text-[10px] border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
           >
             {t('reviews.cta.button')}
             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

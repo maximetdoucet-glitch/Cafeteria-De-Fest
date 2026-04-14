@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
-import { Utensils, Users, History, Heart } from "lucide-react";
+import { Utensils, Users, History, Heart, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutContent() {
@@ -78,7 +78,7 @@ export default function AboutContent() {
         {/* Values Section */}
         <section className="py-24 bg-brand-cream">
            <div className="container mx-auto px-4 text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-black text-brand-charcoal uppercase tracking-tighter mb-4 whitespace-nowrap">
+              <h2 className="text-4xl md:text-6xl font-black text-brand-charcoal uppercase tracking-tighter mb-4 md:whitespace-nowrap">
                  {t('about.values.title')}
               </h2>
            </div>
@@ -108,9 +108,15 @@ export default function AboutContent() {
                    word.toLowerCase() === 'de' || word.toLowerCase() === 'fest' || word.toLowerCase() === 'atmosphere' || word.toLowerCase() === 'atmosphäre' ? <span key={i} className="text-brand-red">{word} </span> : word + ' '
                  ))}
               </h2>
-              <div className="flex flex-col md:flex-row gap-6 justify-center">
-                 <a href="/menu" className="px-12 py-5 bg-white text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all">
-                    {t('about.cta.menu')}
+              <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+                 <a 
+                   href="https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-white font-black uppercase tracking-widest text-xs border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
+                 >
+                   {t('reviews.cta.button')}
+                   <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                  </a>
                  <a href="#location" className="px-12 py-5 border-2 border-white/20 text-white font-black uppercase tracking-widest text-xs hover:border-brand-red transition-all">
                     {t('about.cta.location')}

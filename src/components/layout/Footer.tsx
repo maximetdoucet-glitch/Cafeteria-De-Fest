@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useOrder } from "@/context/OrderContext";
 
@@ -14,36 +14,36 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-12 border-b border-white/5 md:pb-12">
            {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
+          <div className="flex flex-col items-center md:items-start pb-4 md:pb-0">
              <div className="flex items-center space-x-3 mb-4">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/10 p-1 bg-white/5">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border border-white/10 p-1 bg-white/10">
                    <Image 
                      src="/images/logo-mark.png" 
                      alt="De Fest Logo" 
                      fill
-                     className="object-contain p-1.5"
+                     className="object-contain p-2"
                    />
                 </div>
                 <span className="text-2xl font-black tracking-tighter uppercase text-white Oswald">
                   De <span className="text-brand-red">Fest</span>
                 </span>
              </div>
-             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold mb-4">Brakkenstein • Nijmegen</p>
+             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold mb-3">Brakkenstein • Nijmegen</p>
              <p className="text-white/40 text-xs leading-relaxed max-w-[240px] md:max-w-xs text-center md:text-left italic">
                "{t('footer.tagline')}"
              </p>
           </div>
 
-          <div className="w-full h-px bg-white/5 md:hidden mb-6" />
+          <div className="w-full h-px bg-white/5 md:hidden mb-4" />
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
-             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-4">{t('nav.about')}</h4>
-             <div className="flex flex-col items-center md:items-start gap-3">
+             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-3">{t('nav.about')}</h4>
+             <div className="flex flex-col items-center md:items-start gap-2">
                 {[
                   { name: t('nav.menu'), href: "/menu" },
                   { name: t('nav.about'), href: "/about" },
-                  { name: t('nav.reviews'), href: "/reviews" }
+                  { name: t('nav.reviews'), href: "https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ" }
                 ].map(item => (
                    <Link key={item.name} href={item.href} className="font-bold text-xs text-white/50 hover:text-brand-red transition-colors tracking-wide">
                       {item.name}
@@ -61,6 +61,15 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
              <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-4">{t('location.contact.title')}</h4>
              <div className="flex flex-col items-center md:items-start gap-4">
+                <a 
+                  href="https://www.google.com/search?q=Cafetaria+De+Fest+Nijmegen#lrd=0x47c708e88df7e979:0x848245aab48d30c1,2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white font-black uppercase tracking-widest text-[10px] border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group mb-2"
+                >
+                  {t('reviews.cta.button')}
+                  <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </a>
                 <a href="tel:024-3563132" className="flex items-center gap-3 text-white/50 hover:text-brand-red transition-colors group">
                    <Phone size={14} className="text-brand-red group-hover:scale-110 transition-transform" />
                    <span className="text-xs font-bold tracking-tight">024 - 356 3132</span>
