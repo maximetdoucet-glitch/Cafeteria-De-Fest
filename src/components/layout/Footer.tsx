@@ -10,39 +10,36 @@ export default function Footer() {
   const { t } = useLanguage();
   const { openOrder } = useOrder();
   return (
-    <footer className="bg-brand-charcoal pt-16 pb-8 md:py-16">
+    <footer className="bg-brand-charcoal py-10 md:py-16">
       <div className="container mx-auto px-6 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-12 border-b border-white/5 md:pb-12">
            {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
+          <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
              <div className="flex items-center space-x-3 mb-4">
-                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-white/10">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/10 p-1 bg-white/5">
                    <Image 
                      src="/images/logo-mark.png" 
                      alt="De Fest Logo" 
                      fill
-                     className="object-contain p-1"
+                     className="object-contain p-1.5"
                    />
                 </div>
                 <span className="text-2xl font-black tracking-tighter uppercase text-white Oswald">
                   De <span className="text-brand-red">Fest</span>
                 </span>
              </div>
-             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold mb-6">Brakkenstein • Nijmegen</p>
-             <p className="text-white/40 text-xs leading-relaxed max-w-[240px] md:max-w-xs text-center md:text-left mb-6 italic">
+             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold mb-4">Brakkenstein • Nijmegen</p>
+             <p className="text-white/40 text-xs leading-relaxed max-w-[240px] md:max-w-xs text-center md:text-left italic">
                "{t('footer.tagline')}"
              </p>
-             <Link href="/orders" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/10 hover:text-brand-red transition-colors inline-block">
-               KITCHEN ACCESS
-             </Link>
           </div>
 
-          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
+          <div className="w-full h-px bg-white/5 md:hidden mb-6" />
 
           {/* Quick Links */}
-          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
-             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-6">{t('nav.about')}</h4>
-             <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
+             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-4">{t('nav.about')}</h4>
+             <div className="flex flex-col items-center md:items-start gap-3">
                 {[
                   { name: t('nav.menu'), href: "/menu" },
                   { name: t('nav.about'), href: "/about" },
@@ -58,12 +55,12 @@ export default function Footer() {
              </div>
           </div>
 
-          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
+          <div className="w-full h-px bg-white/5 md:hidden mb-6" />
 
           {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
-             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-6">{t('location.contact.title')}</h4>
-             <div className="flex flex-col items-center md:items-start gap-5">
+          <div className="flex flex-col items-center md:items-start pb-6 md:pb-0">
+             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-4">{t('location.contact.title')}</h4>
+             <div className="flex flex-col items-center md:items-start gap-4">
                 <a href="tel:024-3563132" className="flex items-center gap-3 text-white/50 hover:text-brand-red transition-colors group">
                    <Phone size={14} className="text-brand-red group-hover:scale-110 transition-transform" />
                    <span className="text-xs font-bold tracking-tight">024 - 356 3132</span>
@@ -74,14 +71,14 @@ export default function Footer() {
                 </a>
                 <div className="flex items-center md:items-start gap-3 text-white/50">
                    <MapPin size={14} className="text-brand-red flex-shrink-0" />
-                   <span className="text-xs font-bold leading-relaxed text-center md:text-left">
+                   <span className="text-xs font-bold tracking-tight text-center md:text-left">
                      Kanunnik Boenenstraat 2-4, Nijmegen
                    </span>
                 </div>
              </div>
           </div>
 
-          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
+          <div className="w-full h-px bg-white/5 md:hidden mb-6" />
 
           {/* Social & Hours */}
           <div className="flex flex-col items-center md:items-start">
@@ -104,7 +101,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+         <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
                {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
             </div>
