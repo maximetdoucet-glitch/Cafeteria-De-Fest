@@ -116,19 +116,28 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-brand-charcoal z-[60] flex flex-col p-8 space-y-8">
-           <div className="flex justify-between items-center">
-              <span className="text-white font-heading font-bold italic">DE FEST.</span>
-              <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Sluit menu"><X className="text-white" size={32} /></button>
+        <div className="fixed inset-0 bg-brand-charcoal z-[60] flex flex-col p-8 md:hidden">
+           <div className="flex justify-between items-center mb-12">
+              <span className="text-white font-heading font-black text-2xl uppercase tracking-tighter">
+                DE <span className="text-brand-red">FEST.</span>
+              </span>
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)} 
+                aria-label="Sluit menu"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+              >
+                <X className="text-white" size={32} />
+              </button>
            </div>
-            <div className="flex flex-col space-y-6">
+           
+            <div className="flex flex-col space-y-8">
                {/* Mobile Lang Selector */}
-               <div className="flex gap-4 border-b border-white/5 pb-6">
+               <div className="flex gap-6 border-b border-white/10 pb-8">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => setLanguage(lang.code as Language)}
-                      className={`text-lg font-black uppercase tracking-widest transition-colors ${
+                      className={`text-sm font-black uppercase tracking-[0.2em] transition-colors ${
                         language === lang.code ? "text-brand-red" : "text-white/40"
                       }`}
                     >
@@ -137,13 +146,16 @@ export default function Navbar() {
                   ))}
                </div>
                
-               <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-black text-white hover:text-brand-red transition-colors capitalize">{t('nav.menu')}</Link>
-               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-black text-white hover:text-brand-red transition-colors capitalize">{t('nav.about')}</Link>
-               <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-black text-white hover:text-brand-red transition-colors capitalize">{t('nav.reviews')}</Link>
-               <Link href="/#location" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-black text-white hover:text-brand-red transition-colors capitalize">{t('nav.location')}</Link>
+               <div className="flex flex-col space-y-6">
+                 <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.menu')}</Link>
+                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.about')}</Link>
+                 <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.reviews')}</Link>
+                 <Link href="/#location" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.location')}</Link>
+               </div>
+
                <button 
                  onClick={() => { setIsMobileMenuOpen(false); openOrder(); }}
-                 className="w-full bg-brand-red py-6 text-white font-black uppercase text-center text-lg shadow-2xl cursor-pointer"
+                 className="w-full bg-brand-red py-5 mt-4 text-white font-black uppercase text-center text-xs tracking-[0.2em] shadow-2xl cursor-pointer hover:bg-white hover:text-brand-charcoal transition-all"
                >
                  {t('nav.order')}
                </button>
