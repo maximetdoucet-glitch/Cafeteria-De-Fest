@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Flame, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -86,10 +87,16 @@ export default function Menu() {
                 </p>
                 <button 
                   onClick={openOrder}
-                  className="w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
+                  className="md:hidden w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
                 >
                   {t('nav.order')}
                 </button>
+                <Link
+                  href="/menu"
+                  className="hidden md:block w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
+                >
+                  {t('menu.cta.full')}
+                </Link>
               </div>
             </div>
           ))}

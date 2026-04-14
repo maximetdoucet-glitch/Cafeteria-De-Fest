@@ -25,6 +25,7 @@ export const translations = {
     'menu.empty_search': 'Geen gerechten gevonden.',
     'section.highlights.badge': 'Favoriet',
     'section.order.info': 'Bestel online voor afhalen in de winkel',
+    'menu.cta.full': 'Bekijk volledige kaart',
 
     // Pickup Process
     'pickup.title': 'HOE HET WERKT',
@@ -257,6 +258,7 @@ export const translations = {
     'menu.empty_search': 'No items found.',
     'section.highlights.badge': 'Favorite',
     'section.order.info': 'Order online for pickup in the shop',
+    'menu.cta.full': 'Look at full menu',
 
     // Pickup Process
     'pickup.title': 'HOW IT WORKS',
@@ -489,6 +491,7 @@ export const translations = {
     'menu.empty_search': 'Keine Einträge gefunden.',
     'section.highlights.badge': 'Favorit',
     'section.order.info': 'Online bestellen zur Abholung im Laden',
+    'menu.cta.full': 'Vollständige Karte ansehen',
 
     // Pickup Process
     'pickup.title': 'SO FUNKTIONIERT ES',
