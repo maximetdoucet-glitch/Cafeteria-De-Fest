@@ -147,6 +147,7 @@ export default function Navbar() {
                </div>
                
                <div className="flex flex-col space-y-6">
+                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.home')}</Link>
                  <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.menu')}</Link>
                  <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.about')}</Link>
                  <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.reviews')}</Link>

@@ -3,6 +3,7 @@ export type Language = 'nl' | 'en' | 'de';
 export const translations = {
   nl: {
     // Navbar
+    'nav.home': 'Home',
     'nav.menu': 'Menu',
     'nav.about': 'Over Ons',
     'nav.reviews': 'Recensies',
@@ -236,6 +237,7 @@ export const translations = {
   },
   en: {
     // Navbar
+    'nav.home': 'Home',
     'nav.menu': 'Menu',
     'nav.about': 'About Us',
     'nav.reviews': 'Reviews',
@@ -469,6 +471,7 @@ export const translations = {
   },
   de: {
     // Navbar
+    'nav.home': 'Home',
     'nav.menu': 'Menü',
     'nav.about': 'Über Uns',
     'nav.reviews': 'Bewertungen',
