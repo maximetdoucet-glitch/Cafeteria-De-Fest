@@ -471,7 +471,7 @@ export const translations = {
   },
   de: {
     // Navbar
-    'nav.home': 'Home',
+    'nav.home': 'Startseite',
     'nav.menu': 'Menü',
     'nav.about': 'Über Uns',
     'nav.reviews': 'Bewertungen',
