@@ -10,73 +10,78 @@ export default function Footer() {
   const { t } = useLanguage();
   const { openOrder } = useOrder();
   return (
-    <footer className="bg-brand-charcoal py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-12">
+    <footer className="bg-brand-charcoal pt-16 pb-8 md:py-16">
+      <div className="container mx-auto px-6 md:px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-12 border-b border-white/5 md:pb-12">
            {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
              <div className="flex items-center space-x-3 mb-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-white/10">
                    <Image 
                      src="/images/logo-mark.png" 
                      alt="De Fest Logo" 
                      fill
-                     className="object-contain"
+                     className="object-contain p-1"
                    />
                 </div>
-                <span className="text-2xl font-black tracking-tighter uppercase text-white">
+                <span className="text-2xl font-black tracking-tighter uppercase text-white Oswald">
                   De <span className="text-brand-red">Fest</span>
                 </span>
              </div>
-             <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Brakkenstein • Nijmegen</p>
-             <p className="text-white/30 text-xs leading-relaxed max-w-xs text-center md:text-left mb-4">
-               {t('footer.tagline')}
+             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold mb-6">Brakkenstein • Nijmegen</p>
+             <p className="text-white/40 text-xs leading-relaxed max-w-[240px] md:max-w-xs text-center md:text-left mb-6 italic">
+               "{t('footer.tagline')}"
              </p>
-             <Link href="/orders" className="text-[8px] font-black uppercase tracking-[0.4em] text-white/10 hover:text-brand-red transition-colors inline-block">
-               Kitchen Access
+             <Link href="/orders" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/10 hover:text-brand-red transition-colors inline-block">
+               KITCHEN ACCESS
              </Link>
           </div>
 
+          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
+
           {/* Quick Links */}
-          <div className="flex flex-col items-center md:items-start">
-             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">{t('nav.about')}</h4>
-             <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
+             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-6">{t('nav.about')}</h4>
+             <div className="flex flex-col items-center md:items-start gap-4">
                 {[
                   { name: t('nav.menu'), href: "/menu" },
                   { name: t('nav.about'), href: "/about" },
                   { name: t('nav.reviews'), href: "/reviews" }
                 ].map(item => (
-                   <Link key={item.name} href={item.href} className="font-bold text-xs text-white/40 hover:text-brand-red transition-colors">
+                   <Link key={item.name} href={item.href} className="font-bold text-xs text-white/50 hover:text-brand-red transition-colors tracking-wide">
                       {item.name}
                    </Link>
                 ))}
-                <button onClick={openOrder} className="font-bold text-xs text-left text-white/40 hover:text-brand-red transition-colors cursor-pointer">
+                <button onClick={openOrder} className="font-bold text-xs text-center md:text-left text-white/50 hover:text-brand-red transition-colors cursor-pointer tracking-wide">
                    {t('nav.order')}
                 </button>
              </div>
           </div>
 
+          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
+
           {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start">
-             <h4 className="text-white font-black uppercase tracking-widest text-[11px] mb-6">{t('location.contact.title')}</h4>
-             <div className="flex flex-col gap-4">
-                <a href="tel:024-3563132" className="flex items-center gap-3 text-white/40 hover:text-brand-red transition-colors">
-                   <Phone size={14} className="text-brand-red" />
-                   <span className="text-xs font-bold">024 - 356 3132</span>
+          <div className="flex flex-col items-center md:items-start pb-10 md:pb-0">
+             <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px] mb-6">{t('location.contact.title')}</h4>
+             <div className="flex flex-col items-center md:items-start gap-5">
+                <a href="tel:024-3563132" className="flex items-center gap-3 text-white/50 hover:text-brand-red transition-colors group">
+                   <Phone size={14} className="text-brand-red group-hover:scale-110 transition-transform" />
+                   <span className="text-xs font-bold tracking-tight">024 - 356 3132</span>
                 </a>
-                <a href="mailto:info@cafetariadefest.nl" className="flex items-center gap-3 text-white/40 hover:text-brand-red transition-colors">
-                   <Mail size={14} className="text-brand-red" />
-                   <span className="text-xs font-bold">info@cafetariadefest.nl</span>
+                <a href="mailto:info@cafetariadefest.nl" className="flex items-center gap-3 text-white/50 hover:text-brand-red transition-colors group">
+                   <Mail size={14} className="text-brand-red group-hover:scale-110 transition-transform" />
+                   <span className="text-xs font-bold tracking-tight">info@cafetariadefest.nl</span>
                 </a>
-                <div className="flex items-start gap-3 text-white/40">
-                   <MapPin size={14} className="text-brand-red mt-0.5 flex-shrink-0" />
-                   <span className="text-xs font-bold leading-relaxed">
-                     Kanunnik Boenenstraat 2-4<br/>
-                     6525 WS, Nijmegen
+                <div className="flex items-center md:items-start gap-3 text-white/50">
+                   <MapPin size={14} className="text-brand-red flex-shrink-0" />
+                   <span className="text-xs font-bold leading-relaxed text-center md:text-left">
+                     Kanunnik Boenenstraat 2-4, Nijmegen
                    </span>
                 </div>
              </div>
           </div>
+
+          <div className="w-full h-px bg-white/5 md:hidden mb-10" />
 
           {/* Social & Hours */}
           <div className="flex flex-col items-center md:items-start">
@@ -99,14 +104,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-           <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
-              {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
-           </div>
-           <div className="text-[8px] font-black uppercase tracking-[0.6em] text-white/10">
-              {t('footer.tagline')}
-           </div>
-        </div>
+         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
+               {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
+            </div>
+            <div className="hidden md:block text-[8px] font-black uppercase tracking-[0.6em] text-white/10 italic">
+               {t('footer.tagline')}
+            </div>
+         </div>
       </div>
     </footer>
   );
