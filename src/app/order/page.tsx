@@ -95,8 +95,40 @@ export default function OrderPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 h-full flex flex-col bg-white relative bg-white">
-        <div className="flex-1 overflow-y-auto p-5 md:p-12 pb-32">
+      <div className="flex-1 h-full flex flex-col bg-white relative">
+        {/* Mobile Progress Bar - Only visible on mobile */}
+        <div className="md:hidden flex items-center justify-between px-6 py-4 bg-brand-charcoal/5 border-b border-brand-charcoal/5 shrink-0">
+          {steps.map((s, idx) => (
+            <div key={s.id} className="flex flex-col items-center gap-1.5 flex-1 relative">
+              {/* Connector Line */}
+              {idx < steps.length - 1 && (
+                <div className="absolute top-3.5 left-1/2 w-full h-[2px] bg-brand-charcoal/5 -z-10">
+                  <motion.div 
+                    initial={{ width: "0%" }}
+                    animate={{ width: idx < currentStepIndex ? "100%" : "0%" }}
+                    className="h-full bg-green-500"
+                  />
+                </div>
+              )}
+              
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center font-black text-[10px] transition-all duration-300 ${
+                idx < currentStepIndex ? "bg-green-500 text-white" :
+                idx === currentStepIndex ? "bg-brand-red text-white scale-110 shadow-lg ring-4 ring-brand-red/10" :
+                "bg-white border-2 border-brand-charcoal/10 text-brand-charcoal/30"
+              }`}>
+                {idx < currentStepIndex ? <Check size={12} /> : idx + 1}
+              </div>
+              <span className={`text-[7px] uppercase font-black transition-colors text-center ${
+                idx === currentStepIndex ? "text-brand-red" : 
+                idx < currentStepIndex ? "text-brand-charcoal" : "text-brand-charcoal/20"
+              }`}>
+                {s.label.split(' ')[0]}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex-1 overflow-y-auto p-6 md:p-12 pb-32">
           <AnimatePresence mode="wait">
             {step === 'identity' && (
               <motion.div
@@ -106,7 +138,7 @@ export default function OrderPage() {
                 exit={{ opacity: 0, x: -20 }}
                 className="max-w-md"
               >
-                <span className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">Step 01</span>
+                <span className="hidden md:block text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">Step 01</span>
                 <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-8">{t('order.step.identity')}</h3>
 
                 <div className="space-y-6">
@@ -150,7 +182,7 @@ export default function OrderPage() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
               >
-                <span className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">
+                <span className="hidden md:block text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">
                   {step === 'drinks' ? 'Step 02' : step === 'food' ? 'Step 03' : 'Step 04'}
                 </span>
                 <h3 className="text-3xl md:text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t(`order.step.${step}`)}</h3>
@@ -218,7 +250,7 @@ export default function OrderPage() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="max-w-xl"
               >
-                <span className="text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">Step 05</span>
+                <span className="hidden md:block text-[10px] font-black uppercase tracking-widest text-brand-red mb-2 block">Step 05</span>
                 <h3 className="text-4xl font-black text-brand-charcoal uppercase tracking-tighter mb-4">{t('order.step.confirm')}</h3>
 
                 <div className="bg-white border-2 border-brand-charcoal shadow-xl p-8 mb-8 relative overflow-hidden">
