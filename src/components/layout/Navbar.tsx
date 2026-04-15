@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="w-full px-4 md:px-8 flex items-center">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center space-x-4 group flex-shrink-0">
-          <div className="relative w-14 h-14 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-500">
+          <div className="relative w-14 h-14 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-500 -translate-y-[2px]">
             <Image 
               src="/images/logo-mark.png" 
               alt="De Fest Logo" 
