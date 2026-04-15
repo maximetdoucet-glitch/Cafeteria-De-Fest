@@ -17,14 +17,14 @@ export default function Footer() {
            {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start pb-4 md:pb-0">
              <div className="flex items-center space-x-3 mb-4">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border border-white/10 p-1 bg-white/10">
-                   <Image 
-                     src="/images/logo-mark.png" 
-                     alt="De Fest Logo" 
-                     fill
-                     className="object-contain p-2"
-                   />
-                </div>
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border border-white/10 bg-white/10">
+                    <Image 
+                      src="/images/logo-mark.png" 
+                      alt="De Fest Logo" 
+                      fill
+                      className="object-cover"
+                    />
+                 </div>
                 <span className="text-2xl font-black tracking-tighter uppercase text-white Oswald">
                   De <span className="text-brand-red">Fest</span>
                 </span>
