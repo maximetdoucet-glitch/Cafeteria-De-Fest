@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Star, Quote, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -78,6 +79,16 @@ export default function Testimonials() {
               </div>
             </div>
           ))}
+        </div>
+ 
+        <div className="mt-16 flex justify-center">
+          <Link 
+            href="/reviews"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-[11px] hover:bg-brand-charcoal transition-all shadow-xl group Oswald"
+          >
+            {t('testimonials.cta.all')}
+            <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

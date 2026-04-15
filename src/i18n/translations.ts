@@ -46,6 +46,7 @@ export const translations = {
     'testimonials.item1.text': 'Onlangs gegeten bij deze cafetaria vlakbij de Radboud Universiteit en genoten van hun lams-shoarma voor een scherpe prijs. De porties zijn indrukwekkend groot, makkelijk genoeg voor twee personen. Niet alleen was het eten heerlijk, maar de service was ook top. Een echte aanrader!',
     'testimonials.item2.text': 'Lekkere gerechten en een goede smaak. De plek is gezellig en de service is erg goed.',
     'testimonials.item3.text': 'Echt heerlijk eten, ik ben er dol op! ❤️',
+    'testimonials.cta.all': 'Bekijk onze recensies',
 
     // Location
     'location.title': 'KOM LANGS',
@@ -280,6 +281,7 @@ export const translations = {
     'testimonials.item1.text': 'I recently dined at this cafeteria near Radboud University and had the pleasure of enjoying their lamb shoarma for a reasonable price. The portion size was impressively large, easily satisfying two people. Not only was the food delicious, but the service was also top-notch. Highly recommend!',
     'testimonials.item2.text': 'Nice dishes with really good taste. The place is pleasant, and the service is very good.',
     'testimonials.item3.text': 'Really taste food i love it ! ❤️',
+    'testimonials.cta.all': 'See our reviews',
 
     // Location
     'location.title': 'VISIT US',
@@ -514,6 +516,7 @@ export const translations = {
     'testimonials.item1.text': 'Ich habe vor kurzem in dieser Cafeteria in der Nähe der Radboud-Universität gegessen und kam in den Genuss ihres Lamm-Shoarmas zu einem fairen Preis. Die Portionen sind beeindruckend groß und reichen locker für zwei Personen. Nicht nur das Essen war köstlich, auch der Service war erstklassig. Sehr zu empfehlen!',
     'testimonials.item2.text': 'Leckere Gerichte mit wirklich gutem Geschmack. Der Ort ist angenehm und der Service ist sehr gut.',
     'testimonials.item3.text': 'Wirklich leckeres Essen, ich liebe es! ❤️',
+    'testimonials.cta.all': 'Alle Bewertungen ansehen',
 
     // Location
     'location.title': 'BESUCHEN SIE UNS',
