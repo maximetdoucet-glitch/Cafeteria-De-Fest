@@ -39,7 +39,7 @@ export default function OrderPage() {
   };
 
   return (
-    <div className="w-full h-screen h-[100dvh] bg-white flex flex-col md:flex-row relative overflow-hidden">
+    <div className="w-full h-screen h-[100dvh] bg-white flex flex-col md:flex-row relative overflow-hidden overscroll-none">
       {/* Cancel / Close Button */}
       {step !== 'success' && (
         <button
@@ -94,10 +94,10 @@ export default function OrderPage() {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col bg-white relative overflow-hidden">
+      {/* Main Content Area - Grid restricted height on mobile */}
+      <div className="flex-1 flex flex-col md:block md:relative grid grid-rows-[auto_1fr_auto] h-full overflow-hidden">
         {/* Mobile Progress Bar - Only visible on mobile */}
-        <div className="md:hidden sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm">
+        <div className="md:hidden flex items-center justify-between px-6 pb-4 pt-8 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm z-50">
           {steps.map((s, idx) => (
             <div key={s.id} className="flex flex-col items-center gap-1.5 flex-1 relative">
               {/* Connector Line */}
@@ -356,7 +356,7 @@ export default function OrderPage() {
         </div>
 
         {/* Bottom Nav */}
-        <div className={`shrink-0 p-4 md:p-8 border-t border-brand-charcoal/5 bg-white z-40 transition-transform ${step === 'success' ? 'hidden' : ''}`}>
+        <div className={`shrink-0 p-4 md:p-8 border-t border-brand-charcoal/5 bg-white z-50 transition-transform pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-8 ${step === 'success' ? 'hidden' : ''}`}>
           <div className="flex justify-between items-center max-w-5xl mx-auto">
             <div className="flex items-center space-x-4">
               {currentStepIndex > 0 && step !== 'success' && (
