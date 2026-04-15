@@ -11,60 +11,60 @@ export default function ReviewsContent() {
 
   const allReviews = [
     {
-      name: "Pieter Bas",
-      date: "14 nov 2023",
+      name: "A Wayfarer's Tale, Dipa",
+      date: "2 jaar geleden",
       text: t('reviews.item1.text'),
-      stars: 5,
-      tag: t('reviews.tag.verified')
-    },
-    {
-      name: "Mees Thissen",
-      date: "5 jun 2023",
-      text: t('reviews.item2.text'),
       stars: 5,
       tag: t('reviews.tag.guide')
     },
     {
-      name: "Pim",
-      date: "30 jun 2023",
+      name: "Mónica Bernal Montero",
+      date: "10 maanden geleden",
+      text: t('reviews.item2.text'),
+      stars: 5,
+      tag: t('reviews.tag.verified')
+    },
+    {
+      name: "Alitha Natriezia",
+      date: "3 jaar geleden",
       text: t('reviews.item3.text'),
       stars: 5,
-      tag: t('reviews.tag.customer')
+      tag: t('reviews.tag.guide')
     },
     {
-      name: "Ina",
-      date: "1 feb 2024",
+      name: "Anna Tőkés",
+      date: "8 jaar geleden",
       text: t('reviews.item4.text'),
       stars: 5,
-      tag: t('reviews.tag.resident')
+      tag: t('reviews.tag.verified')
     },
     {
-      name: "Lars",
-      date: "12 mrt 2024",
+      name: "Lynn Le",
+      date: "2 jaar geleden",
       text: t('reviews.item5.text'),
-      stars: 4,
-      tag: t('reviews.tag.student')
+      stars: 5,
+      tag: t('reviews.tag.verified')
     },
     {
-      name: "Sandra",
-      date: "20 mei 2024",
+      name: "Csaba Bálint",
+      date: "8 jaar geleden",
       text: t('reviews.item6.text'),
       stars: 5,
       tag: t('reviews.tag.verified')
     },
     {
-      name: "Jesse",
-      date: "15 jan 2024",
+      name: "Jelte Schermer",
+      date: "5 jaar geleden",
       text: t('reviews.item7.text'),
-      stars: 4,
-      tag: t('reviews.tag.customer')
+      stars: 5,
+      tag: t('reviews.tag.verified')
     },
     {
-      name: "Bram",
-      date: "3 sep 2023",
+      name: "Bram Thijssen",
+      date: "5 jaar geleden",
       text: t('reviews.item8.text'),
       stars: 5,
-      tag: t('reviews.tag.guide')
+      tag: t('reviews.tag.verified')
     }
   ];
 
@@ -90,8 +90,8 @@ export default function ReviewsContent() {
              </p>
           </div>
         </section>
-
-        {/* Reviews Grid */}
+ 
+         {/* Reviews Grid */}
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
@@ -113,7 +113,7 @@ export default function ReviewsContent() {
                    </p>
 
                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-brand-charcoal rounded-full flex items-center justify-center text-white font-black text-sm">
+                      <div className="w-10 h-10 bg-brand-charcoal rounded-full flex items-center justify-center text-white font-black text-sm overflow-hidden border border-gray-100 shadow-sm">
                          {review.name.charAt(0)}
                       </div>
                       <div>

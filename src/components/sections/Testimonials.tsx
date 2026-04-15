@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Star, Quote, ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Testimonials() {
@@ -10,22 +9,22 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Pieter Bas",
+      name: "A Wayfarer's Tale, Dipa",
       text: t('testimonials.item1.text'),
       stars: 5,
-      tag: t('testimonials.verified')
+      tag: t('reviews.tag.guide')
     },
     {
-      name: "Mees Thissen",
+      name: "Mónica Bernal Montero",
       text: t('testimonials.item2.text'),
       stars: 5,
-      tag: "Lokale Gids"
+      tag: t('reviews.tag.verified')
     },
     {
-      name: "Pim",
+      name: "Alitha Natriezia",
       text: t('testimonials.item3.text'),
       stars: 5,
-      tag: "Vaste Klant"
+      tag: t('reviews.tag.guide')
     }
   ];
   return (
@@ -54,23 +53,28 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
+          {testimonials.map((tr, idx) => (
             <div key={idx} className="bg-white p-8 md:p-10 border border-gray-100 relative group hover:border-brand-red/20 transition-all shadow-sm hover:shadow-xl">
               <Quote className="absolute top-8 right-8 text-gray-50 group-hover:text-brand-red/10 transition-colors" size={48} />
               
               <div className="flex gap-1 mb-6">
-                {[...Array(t.stars)].map((_, i) => (
+                {[...Array(tr.stars)].map((_, i) => (
                   <Star key={i} size={14} className="fill-brand-yellow text-brand-yellow" />
                 ))}
               </div>
 
               <p className="text-brand-charcoal font-medium italic text-lg mb-8 leading-relaxed relative z-10">
-                "{t.text}"
+                &quot;{tr.text}&quot;
               </p>
 
-              <div>
-                <p className="font-black text-brand-charcoal uppercase tracking-widest text-[13px] mb-1">{t.name}</p>
-                <p className="text-brand-red font-bold uppercase tracking-[0.2em] text-[9px]">{t.tag}</p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-brand-charcoal rounded-full flex items-center justify-center text-white font-black text-xs overflow-hidden border border-gray-50">
+                  {tr.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-black text-brand-charcoal uppercase tracking-widest text-[11px] mb-0.5">{tr.name}</p>
+                  <p className="text-brand-red font-bold uppercase tracking-[0.2em] text-[8px]">{tr.tag}</p>
+                </div>
               </div>
             </div>
           ))}
