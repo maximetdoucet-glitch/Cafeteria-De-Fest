@@ -95,9 +95,9 @@ export default function OrderPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 h-full flex flex-col bg-white relative">
+      <div className="flex-1 flex flex-col bg-white relative overflow-hidden">
         {/* Mobile Progress Bar - Only visible on mobile */}
-        <div className="md:hidden flex items-center justify-between px-6 py-4 bg-brand-charcoal/5 border-b border-brand-charcoal/5 shrink-0">
+        <div className="md:hidden sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm">
           {steps.map((s, idx) => (
             <div key={s.id} className="flex flex-col items-center gap-1.5 flex-1 relative">
               {/* Connector Line */}
