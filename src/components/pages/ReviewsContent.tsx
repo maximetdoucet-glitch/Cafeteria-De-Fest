@@ -138,7 +138,7 @@ export default function ReviewsContent() {
                        {t('reviews.cta.subtitle')}
                     </p>
                     <a 
-                      href="https://www.google.com/maps" 
+                      href="https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs hover:bg-white hover:text-brand-charcoal transition-all shadow-2xl"
