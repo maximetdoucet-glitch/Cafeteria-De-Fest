@@ -110,7 +110,7 @@ export default function AboutContent() {
               </h2>
               <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                  <a 
-                   href="https://search.google.com/local/writereview?placeid=ChIJY7vWd5dJ0kcR-iT5m71_lIs"
+                   href="https://www.google.com/search?q=Cafetaria+De+Fest+Brakkenstein+Nijmegen#lrd=0x47c708e88df7e979:0x848245aab48d30c1,3,1"
                    target="_blank"
                    rel="noopener noreferrer"
                    className="flex items-center gap-2 text-white font-black uppercase tracking-widest text-xs border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
