@@ -63,14 +63,9 @@ export default function Navbar() {
             <Link href="/about" className="text-xs font-black uppercase tracking-widest text-brand-charcoal hover:text-brand-red transition-colors text-shadow-food">
               {t('nav.about')}
             </Link>
-            <a 
-              href="https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-black uppercase tracking-widest text-brand-charcoal hover:text-brand-red transition-colors text-shadow-food"
-            >
+            <Link href="/reviews" className="text-xs font-black uppercase tracking-widest text-brand-charcoal hover:text-brand-red transition-colors text-shadow-food">
               {t('nav.reviews')}
-            </a>
+            </Link>
             <Link href="/#location" className="text-xs font-black uppercase tracking-widest text-brand-charcoal hover:text-brand-red transition-colors text-shadow-food">
               {t('nav.location')}
             </Link>
@@ -155,15 +150,7 @@ export default function Navbar() {
                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.home')}</Link>
                  <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.menu')}</Link>
                  <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.about')}</Link>
-                 <a 
-                   href="https://search.google.com/local/writereview?placeid=ChIJeen3jeglx0cRwTCNtKPfgoQ" 
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   onClick={() => setIsMobileMenuOpen(false)} 
-                   className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]"
-                 >
-                   {t('nav.reviews')}
-                 </a>
+                 <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.reviews')}</Link>
                  <Link href="/#location" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.location')}</Link>
                </div>
 
