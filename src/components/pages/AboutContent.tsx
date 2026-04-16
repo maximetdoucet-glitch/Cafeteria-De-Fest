@@ -108,17 +108,17 @@ export default function AboutContent() {
                    word.toLowerCase() === 'de' || word.toLowerCase() === 'fest' || word.toLowerCase() === 'atmosphere' || word.toLowerCase() === 'atmosphäre' ? <span key={i} className="text-brand-red">{word} </span> : word + ' '
                  ))}
               </h2>
-              <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
                  <a 
                    href="https://www.google.com/search?q=Cafetaria+De+Fest+Brakkenstein+Nijmegen#lrd=0x47c708e88df7e979:0x848245aab48d30c1,3,1"
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="flex items-center gap-2 text-white font-black uppercase tracking-widest text-xs border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
+                   className="btn-premium-primary shimmer flex items-center gap-3 !px-10 !py-5"
                  >
                    {t('reviews.cta.button')}
                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                  </a>
-                 <a href="#location" className="px-12 py-5 border-2 border-white/20 text-white font-black uppercase tracking-widest text-xs hover:border-brand-red transition-all">
+                 <a href="#location" className="btn-premium-secondary shimmer !px-12 !py-5">
                     {t('about.cta.location')}
                  </a>
               </div>

@@ -72,7 +72,7 @@ export default function Location() {
                href="https://www.google.com/maps/dir/?api=1&destination=Kanunnik+Boenenstraat+2-4+Nijmegen"
                target="_blank"
                rel="noopener noreferrer"
-               className="inline-block px-10 py-4 border-4 border-brand-charcoal font-black uppercase text-xs tracking-[0.2em] hover:bg-brand-charcoal hover:text-white transition-all shadow-xl"
+               className="btn-premium-outline shimmer !inline-flex items-center justify-center"
              >
                 {t('location.route')}
              </a>

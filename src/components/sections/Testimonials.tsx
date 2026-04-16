@@ -46,7 +46,7 @@ export default function Testimonials() {
             href="https://www.google.com/search?q=Cafetaria+De+Fest+Brakkenstein+Nijmegen#lrd=0x47c708e88df7e979:0x848245aab48d30c1,3,1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-brand-charcoal font-black uppercase tracking-widest text-[10px] border-b-2 border-brand-red pb-1 hover:text-brand-red transition-all group"
+            className="btn-premium-primary shimmer flex items-center gap-3 !px-8 !py-4 text-[11px]"
           >
             {t('reviews.cta.button')}
             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
