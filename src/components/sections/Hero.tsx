@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { useOrder } from "@/context/OrderContext";
 
@@ -53,12 +54,12 @@ export default function Hero() {
               {t('hero.cta.order')}
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <a 
-              href="#menu"
-              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all flex items-center justify-center"
+            <Link 
+              href="/menu"
+              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all flex items-center justify-center cursor-pointer"
             >
               {t('hero.cta.menu')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

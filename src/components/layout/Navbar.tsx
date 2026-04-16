@@ -28,16 +28,15 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white py-3 shadow-md border-b border-gray-100" : "bg-transparent py-5"
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white py-3 shadow-md border-b border-gray-100" : "bg-transparent py-5"
+      }`}>
       <div className="w-full px-4 md:px-8 flex items-center">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center space-x-4 group flex-shrink-0">
           <div className="relative w-16 h-16 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-500 -translate-y-[6px]">
-            <Image 
-              src="/images/logo-mark.png" 
-              alt="De Fest Logo" 
+            <Image
+              src="/images/logo-mark.png"
+              alt="De Fest Logo"
               fill
               className="object-contain"
             />
@@ -46,9 +45,8 @@ export default function Navbar() {
             <span className="font-heading font-black text-[16px] sm:text-2xl leading-none uppercase tracking-tighter text-brand-charcoal">
               Cafetaria <span className="text-brand-red">De Fest</span>
             </span>
-            <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${
-              isScrolled ? "text-gray-400" : "text-brand-charcoal/60"
-            }`}>
+            <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${isScrolled ? "text-gray-400" : "text-brand-charcoal/60"
+              }`}>
               Brakkenstein • Nijmegen
             </span>
           </div>
@@ -70,7 +68,7 @@ export default function Navbar() {
               {t('nav.location')}
             </Link>
 
-            
+
             {/* Language Switcher */}
             <div className="relative group/lang">
               <button className="flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-brand-charcoal hover:text-brand-red transition-colors">
@@ -83,9 +81,8 @@ export default function Navbar() {
                   <button
                     key={lang.code}
                     onClick={() => setLanguage(lang.code as Language)}
-                    className={`w-full text-left px-4 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors ${
-                      language === lang.code ? "text-brand-red" : "text-white/60"
-                    }`}
+                    className={`w-full text-left px-4 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors ${language === lang.code ? "text-brand-red" : "text-white/60"
+                      }`}
                   >
                     {lang.label}
                   </button>
@@ -94,7 +91,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <button 
+          <button
             onClick={openOrder}
             className="flex items-center space-x-2 bg-brand-red px-10 py-4 text-white font-black uppercase tracking-[0.15em] text-xs shadow-xl hover:bg-brand-charcoal hover:scale-105 transition-all"
           >
@@ -104,7 +101,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden ml-auto p-2 rounded-full text-brand-charcoal"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -117,50 +114,49 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-brand-charcoal z-[60] flex flex-col p-8 md:hidden">
-           <div className="flex justify-between items-center mb-12">
-              <span className="text-white font-heading font-black text-2xl uppercase tracking-tighter">
-                DE <span className="text-brand-red">FEST.</span>
-              </span>
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                aria-label="Sluit menu"
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
-              >
-                <X className="text-white" size={32} />
-              </button>
-           </div>
-           
-            <div className="flex flex-col space-y-8">
-               {/* Mobile Lang Selector */}
-               <div className="flex gap-6 border-b border-white/10 pb-8">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => setLanguage(lang.code as Language)}
-                      className={`text-sm font-black uppercase tracking-[0.2em] transition-colors ${
-                        language === lang.code ? "text-brand-red" : "text-white/40"
-                      }`}
-                    >
-                      {lang.label}
-                    </button>
-                  ))}
-               </div>
-               
-               <div className="flex flex-col space-y-6">
-                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.home')}</Link>
-                 <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.menu')}</Link>
-                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.about')}</Link>
-                 <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.reviews')}</Link>
-                 <Link href="/#location" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.location')}</Link>
-               </div>
+          <div className="flex justify-between items-center mb-12">
+            <span className="text-white font-heading font-black text-2xl uppercase tracking-tighter">
+              DE <span className="text-brand-red">FEST.</span>
+            </span>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Sluit menu"
+              className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <X className="text-white" size={32} />
+            </button>
+          </div>
 
-               <button 
-                 onClick={() => { setIsMobileMenuOpen(false); openOrder(); }}
-                 className="w-full bg-brand-red py-5 mt-4 text-white font-black uppercase text-center text-xs tracking-[0.2em] shadow-2xl cursor-pointer hover:bg-white hover:text-brand-charcoal transition-all"
-               >
-                 {t('nav.order')}
-               </button>
+          <div className="flex flex-col space-y-8">
+            {/* Mobile Lang Selector */}
+            <div className="flex gap-6 border-b border-white/10 pb-8">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code as Language)}
+                  className={`text-sm font-black uppercase tracking-[0.2em] transition-colors ${language === lang.code ? "text-brand-red" : "text-white/40"
+                    }`}
+                >
+                  {lang.label}
+                </button>
+              ))}
             </div>
+
+            <div className="flex flex-col space-y-6">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.home')}</Link>
+              <Link href="/menu" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.menu')}</Link>
+              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.about')}</Link>
+              <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.reviews')}</Link>
+              <Link href="/#location" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-black text-white hover:text-brand-red transition-colors uppercase tracking-[0.1em]">{t('nav.location')}</Link>
+            </div>
+
+            <button
+              onClick={() => { setIsMobileMenuOpen(false); openOrder(); }}
+              className="w-full bg-brand-red py-5 mt-4 text-white font-black uppercase text-center text-xs tracking-[0.2em] shadow-2xl cursor-pointer hover:bg-white hover:text-brand-charcoal transition-all"
+            >
+              {t('nav.order')}
+            </button>
+          </div>
         </div>
       )}
     </nav>

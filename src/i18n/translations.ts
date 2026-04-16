@@ -250,7 +250,7 @@ export const translations = {
     'hero.title': 'Cafetaria De Fest',
     'hero.subtitle': 'For years the address for fresh fries, traditional snacks, and the tastiest pizzas in Nijmegen.',
     'hero.cta.order': 'Place your order',
-    'hero.cta.menu': 'View Menu',
+    'hero.cta.menu': 'See the Menu',
 
     // Menu Highlights
     'menu.title': 'Our Best Items',
