@@ -41,19 +41,9 @@ export default function OrderPage() {
   return (
     <div className="w-full h-screen h-[100dvh] bg-white flex flex-col md:flex-row relative overflow-hidden overscroll-none">
       {/* Cancel / Close Button */}
-      {step !== 'success' && (
-        <button
-          onClick={closeOrder}
-          aria-label="Annuleer bestelling"
-          title="Annuleren"
-          className="btn-premium-secondary shimmer fixed top-8 right-8 z-50 flex items-center gap-2 !px-6 !py-3 !text-[10px] !rounded-xl group"
-        >
-          <span>Annuleren</span>
-          <X size={14} className="group-hover:scale-125 transition-transform" />
-        </button>
-      )}
+
       {/* Sidebar - Progress & Information (Desktop) */}
-      <div className="hidden md:flex w-80 h-full bg-brand-charcoal p-10 flex-col justify-between text-white border-r border-white/10 shrink-0">
+      <div className="hidden md:flex w-80 h-full bg-brand-charcoal p-10 flex-col justify-between text-white border-r border-white/10 shrink-0 md:rounded-r-[2.5rem] z-20">
         <div>
           <div className="mb-12">
             <div className="flex items-center space-x-3 mb-6">
@@ -96,6 +86,18 @@ export default function OrderPage() {
 
       {/* Main Content Area - Grid restricted height on mobile */}
       <div className="flex-1 flex flex-col md:block md:relative grid grid-rows-[auto_1fr_auto] h-full overflow-hidden">
+        {/* Cancel / Close Button */}
+        {step !== 'success' && (
+          <button
+            onClick={closeOrder}
+            aria-label="Annuleer bestelling"
+            title="Annuleren"
+            className="btn-premium-secondary shimmer absolute top-8 right-8 z-50 flex items-center gap-2 !px-6 !py-3 !text-[10px] !rounded-xl group"
+          >
+            <span>Annuleren</span>
+            <X size={14} className="group-hover:scale-125 transition-transform" />
+          </button>
+        )}
         {/* Mobile Progress Bar - Only visible on mobile */}
         <div className="md:hidden flex items-center justify-between px-6 pb-4 pt-8 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm z-50">
           {steps.map((s, idx) => (
