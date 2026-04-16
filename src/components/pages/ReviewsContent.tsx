@@ -141,7 +141,7 @@ export default function ReviewsContent() {
                       href="https://www.google.com/search?q=Cafetaria+De+Fest+Brakkenstein+Nijmegen#lrd=0x47c708e88df7e979:0x848245aab48d30c1,3,1" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs hover:bg-white hover:text-brand-charcoal transition-all shadow-2xl"
+                      className="btn-premium-primary shimmer inline-flex items-center gap-3"
                     >
                       {t('reviews.cta.button')}
                       <ExternalLink size={14} />
