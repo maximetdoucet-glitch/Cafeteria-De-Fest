@@ -127,7 +127,7 @@ export default function ReviewsContent() {
 
             {/* Google Maps CTA */}
             <div className="mt-24 text-center">
-               <div className="inline-block bg-brand-charcoal p-12 md:p-20 relative overflow-hidden">
+               <div className="inline-block bg-brand-charcoal p-12 md:p-20 relative overflow-hidden rounded-[2.5rem]">
                   <div className="absolute inset-0 bg-brand-red opacity-10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                   <div className="relative z-10">
                     <MessageSquare size={48} className="text-brand-red mx-auto mb-6" />
