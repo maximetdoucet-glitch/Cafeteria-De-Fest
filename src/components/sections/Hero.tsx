@@ -49,14 +49,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={openOrder}
-              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 bg-brand-red text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-brand-charcoal transition-all shadow-2xl group cursor-pointer"
+              className="btn-premium-primary shimmer flex items-center justify-center gap-3 group"
             >
               {t('hero.cta.order')}
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <Link 
               href="/menu"
-              className="w-full md:w-auto px-6 py-4 md:px-12 md:py-5 border-4 border-brand-charcoal text-brand-charcoal font-black uppercase tracking-widest text-xs hover:bg-brand-charcoal hover:text-white transition-all flex items-center justify-center cursor-pointer"
+              className="btn-premium-outline shimmer flex items-center justify-center"
             >
               {t('hero.cta.menu')}
             </Link>

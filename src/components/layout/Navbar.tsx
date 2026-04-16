@@ -93,7 +93,7 @@ export default function Navbar() {
 
           <button
             onClick={openOrder}
-            className="flex items-center space-x-2 bg-brand-red px-10 py-4 text-white font-black uppercase tracking-[0.15em] text-xs shadow-xl hover:bg-brand-charcoal hover:scale-105 transition-all"
+            className="btn-premium-primary shimmer flex items-center space-x-2 !px-8 !py-3 !rounded-lg text-[11px]"
           >
             <ShoppingCart size={16} />
             <span>{t('nav.order')}</span>
