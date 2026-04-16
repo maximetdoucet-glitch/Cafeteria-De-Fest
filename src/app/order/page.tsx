@@ -46,7 +46,7 @@ export default function OrderPage() {
           onClick={closeOrder}
           aria-label="Annuleer bestelling"
           title="Annuleren"
-          className="btn-premium-secondary shimmer !fixed !top-10 !right-10 z-[100] flex items-center gap-2 !px-6 !py-3 !text-[10px] !rounded-xl group"
+          className="btn-premium-secondary shimmer !fixed !top-8 !right-8 !left-auto z-[100] flex items-center gap-2 !px-6 !py-3 !text-[10px] !rounded-xl group"
         >
           <span>Annuleren</span>
           <X size={14} className="group-hover:scale-125 transition-transform" />
@@ -54,7 +54,7 @@ export default function OrderPage() {
       )}
 
       {/* Sidebar - Progress & Information (Desktop) */}
-      <div className="hidden md:flex w-80 h-full bg-brand-charcoal p-10 flex-col justify-between text-white border-r border-white/10 shrink-0 md:rounded-r-[2.5rem] z-20">
+      <div className="hidden md:flex w-64 h-full bg-brand-charcoal p-8 flex-col justify-between text-white border-r border-white/10 shrink-0 md:rounded-r-[2.5rem] z-20">
         <div>
           <div className="mb-12">
             <div className="flex items-center space-x-3 mb-6">
