@@ -93,7 +93,7 @@ export default function Menu() {
                 </button>
                 <Link
                   href="/menu"
-                  className="hidden md:block w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
+                  className="w-full bg-brand-red py-3 text-white font-black uppercase text-center text-sm shadow-lg hover:bg-brand-charcoal transition-all cursor-pointer"
                 >
                   {t('menu.cta.full')}
                 </Link>
@@ -109,14 +109,14 @@ export default function Menu() {
           </p>
           <button
             onClick={openOrder}
-            className="flex md:hidden w-full justify-center items-center gap-3 px-6 py-4 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl cursor-pointer"
+            className="flex w-full justify-center items-center gap-3 px-6 py-4 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl cursor-pointer mb-4 md:mb-0"
           >
             {t('hero.cta.order')}
             <ChevronRight size={18} />
           </button>
           <Link
             href="/menu"
-            className="hidden md:inline-flex justify-center items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
+            className="flex w-full md:w-auto justify-center items-center gap-3 px-16 py-6 bg-brand-charcoal text-white font-black uppercase tracking-[0.15em] text-sm hover:bg-brand-red transition-all shadow-2xl group cursor-pointer"
           >
             {t('menu.cta.full')}
             <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
