@@ -46,7 +46,7 @@ export default function OrderPage() {
           onClick={closeOrder}
           aria-label="Annuleer bestelling"
           title="Annuleren"
-          className="fixed top-6 right-6 z-50 flex items-center gap-2 px-6 py-3 bg-brand-charcoal text-white font-black uppercase tracking-widest text-[10px] hover:bg-brand-red transition-all shadow-xl rounded-full md:rounded-none group"
+          className="btn-premium-secondary shimmer fixed top-6 right-6 z-50 flex items-center gap-2 !px-6 !py-3 !text-[10px] !rounded-full md:!rounded-xl group"
         >
           <span>Annuleren</span>
           <X size={14} className="group-hover:scale-125 transition-transform" />
