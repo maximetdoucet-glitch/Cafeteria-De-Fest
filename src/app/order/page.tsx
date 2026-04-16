@@ -387,10 +387,11 @@ export default function OrderPage() {
                   whileTap={{ scale: 0.95 }}
                   onClick={step === 'summary' ? submitOrder : handleNext}
                   disabled={step === 'identity' && !userName || step === 'summary' && selectedItems.length === 0}
-                  className={`text-white px-6 py-3 md:px-10 md:py-4 font-black uppercase tracking-widest text-[10px] md:text-xs flex items-center space-x-2 md:space-x-3 transition-all shadow-xl disabled:opacity-20 disabled:grayscale ${step === 'summary' ? "bg-brand-red hover:bg-brand-charcoal" : "bg-brand-charcoal hover:bg-brand-red"
-                    }`}
+                  className={`shimmer inline-flex items-center space-x-2 md:space-x-3 !px-6 !py-3 md:!px-10 md:!py-4 transition-all disabled:opacity-20 disabled:grayscale ${
+                    step === 'summary' ? "btn-premium-primary" : "btn-premium-secondary"
+                  }`}
                 >
-                  <span>
+                  <span className="text-[10px] md:text-xs">
                     {step === 'identity' && !userName ? "GEEF NAAM OP" :
                       step === 'summary' ? t('order.summary.place') :
                         t('order.category.next')}
