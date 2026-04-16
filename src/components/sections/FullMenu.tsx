@@ -124,7 +124,7 @@ export default function FullMenu() {
 
         {/* Order CTA */}
         <div className="mt-24 text-center">
-          <div className="bg-brand-charcoal p-12 md:p-20 relative overflow-hidden">
+          <div className="bg-brand-charcoal p-12 md:p-20 relative overflow-hidden rounded-[2.5rem]">
             <div className="absolute inset-0 bg-brand-red opacity-5 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4" />
             <div className="relative z-10">
               <p className="text-white font-black uppercase tracking-widest text-xs mb-2">
@@ -137,7 +137,7 @@ export default function FullMenu() {
               </h3>
               <button
                 onClick={openOrder}
-                className="inline-flex items-center gap-3 px-16 py-5 bg-brand-red text-white font-black uppercase tracking-widest text-sm hover:bg-white hover:text-brand-charcoal transition-all shadow-2xl cursor-pointer"
+                className="btn-premium-primary shimmer inline-flex items-center gap-3 !px-16 !py-5"
               >
                 <ShoppingCart size={20} />
                 {t('hero.cta.order')}
