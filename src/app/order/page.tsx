@@ -104,9 +104,9 @@ export default function OrderPage() {
       </div>
 
       {/* Main Content Area - Grid restricted height on mobile */}
-      <div className="flex-1 flex flex-col h-full min-h-0 overflow-hidden relative">
-        {/* Mobile Progress Bar - Only visible on mobile */}
-        <div className="md:hidden flex items-center justify-between px-6 pb-4 pt-8 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm z-50">
+      <div className="flex-1 flex flex-col h-full min-h-0 relative">
+        {/* Mobile Progress Bar - FIXED on mobile */}
+        <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-brand-charcoal/5 flex items-center justify-between px-6 pb-4 pt-8 shrink-0 shadow-sm z-50">
           {steps.map((s, idx) => (
             <div key={s.id} className="flex flex-col items-center gap-1.5 flex-1 relative">
               {/* Connector Line */}
@@ -139,7 +139,7 @@ export default function OrderPage() {
 
         <div 
           ref={scrollContainerRef}
-          className="flex-1 min-h-0 overflow-y-auto p-6 md:p-12 pb-32"
+          className="flex-1 overflow-y-auto p-6 md:p-12 pt-[140px] md:pt-12 pb-[140px] md:pb-8"
         >
           <AnimatePresence mode="wait">
             {step === 'identity' && (
@@ -367,8 +367,8 @@ export default function OrderPage() {
           </AnimatePresence>
         </div>
 
-        {/* Bottom Nav */}
-        <div className={`shrink-0 p-4 md:p-8 border-t border-brand-charcoal/5 bg-white z-50 transition-transform pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-8 ${step === 'success' ? 'hidden' : ''}`}>
+        {/* Bottom Nav - FIXED on mobile */}
+        <div className={`shrink-0 fixed bottom-0 left-0 right-0 md:relative p-4 md:p-8 border-t border-brand-charcoal/5 bg-white z-50 transition-transform pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-8 ${step === 'success' ? 'hidden' : ''}`}>
           <div className="flex justify-between items-center max-w-5xl mx-auto">
             <div className="flex items-center space-x-4">
               {currentStepIndex > 0 && step !== 'success' && (
