@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, ShoppingCart, Check, Star, X } from "lucide-react";
 import { useOrder, OrderStep } from "@/context/OrderContext";
@@ -13,6 +13,14 @@ export default function OrderPage() {
     selectedItems, addItem, removeItem, totalPrice, submitOrder, clearOrder
   } = useOrder();
   const { t } = useLanguage();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo(0, 0);
+    }
+  }, [step]);
 
   const steps: { id: OrderStep; label: string }[] = [
     { id: 'identity', label: t('order.step.identity') },
@@ -96,7 +104,7 @@ export default function OrderPage() {
       </div>
 
       {/* Main Content Area - Grid restricted height on mobile */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden relative">
+      <div className="flex-1 flex flex-col h-full min-h-0 overflow-hidden relative">
         {/* Mobile Progress Bar - Only visible on mobile */}
         <div className="md:hidden flex items-center justify-between px-6 pb-4 pt-8 bg-white border-b border-brand-charcoal/5 shrink-0 shadow-sm z-50">
           {steps.map((s, idx) => (
@@ -129,7 +137,10 @@ export default function OrderPage() {
           ))}
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6 md:p-12 pb-32">
+        <div 
+          ref={scrollContainerRef}
+          className="flex-1 min-h-0 overflow-y-auto p-6 md:p-12 pb-32"
+        >
           <AnimatePresence mode="wait">
             {step === 'identity' && (
               <motion.div
