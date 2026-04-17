@@ -152,7 +152,7 @@ export default function Navbar() {
 
             <button
               onClick={() => { setIsMobileMenuOpen(false); openOrder(); }}
-              className="w-full bg-brand-red py-5 mt-4 text-white font-black uppercase text-center text-xs tracking-[0.2em] shadow-2xl cursor-pointer hover:bg-white hover:text-brand-charcoal transition-all"
+              className="w-full bg-brand-red py-5 mt-4 text-white font-black uppercase text-center text-xs tracking-[0.2em] shadow-2xl cursor-pointer hover:bg-white hover:text-brand-charcoal transition-all rounded-xl"
             >
               {t('nav.order')}
             </button>
